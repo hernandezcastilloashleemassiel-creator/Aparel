@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio Sesion</title>
+    <Link rel="Stylesheet" href="StyleInicio.css">
+
+   
+</head>
+<body>
+    <div class="container">
+
+       <div class="logo">👜</div>
+
+         <h1>APPAREL</h1>
+
+         <p class="subtitle">Sistema de Facturación</p>
+
+         <label>Usuario</label>
+         <input type="text" id="usuario" placeholder="Ingrese su usuario">
+
+         <label>Contraseña</label>
+
+            <input type="password" id="password" placeholder="Ingrese su contraseña">
+                 <button onclick="login()">Iniciar sesion</button>
+
+                 <script>
+                            function login() {
+                                let User = document.getElementById('usuario').value;
+                                let Password = document.getElementById('password').value;
+
+                                // Validar las credenciales (esto es solo un ejemplo, en un entorno real se debería validar en el servidor)
+                                if (User === 'admin' && Password === 'admin123') {
+                                    // Redirigir al panel de control
+                                    window.location.href = 'Panel.html';
+                                } else {
+                                    alert('Usuario o contraseña incorrectos');
+                                }
+                            }
+                </script>
+                
+
+       
+
+
+        </div>
+    
+</body>
+</html>

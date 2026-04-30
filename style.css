@@ -1,0 +1,222 @@
+/* Reset */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Contenedor del login */
+        .container{
+            background: #f5ebe0;
+            padding: 40px 30px;
+            border-radius: 20px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0  10px 25px rgba(0, 0, 0, 0.15);
+
+        }
+        /* Logo */
+        .logo{
+            font-size: 40px;
+            color: #7f5539;
+            margin-bottom: 30px;
+            font-size: 22px;
+        }
+        /* Titulo Apparel */
+        h1{
+            font-size: 28px;
+            color: #7f5539;
+            justify-self: center
+            
+           
+        }
+        /* Subtitulo */
+        .subtitle{
+            font-size: 14px;
+            color: #9c6644;
+            margin-bottom: 30px;
+            justify-self: center;
+        }
+        /* Etiqueta */
+        form label{
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #7f5539;
+            font-size: 14px;
+            justify-content: center
+        }
+        /* Campos de texto */
+        form input{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #d6ccc2;
+            border-radius: 10px;
+            outline: none;
+        }
+        /*focus en los campos de texto */
+        form input:focus{
+            border-color: #b08968;
+        }
+        /* Boton de inicio de sesion */
+        form button{    
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #b08968;
+            color: white;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ;
+
+        }   
+        /* Hover en el boton */
+        form button:hover{
+            background: #9c6644;
+
+        }
+        /*demonstracion de la pagina */
+        .demonstration{
+            margin-top: 20px;
+            font-size: 13px;
+            color: #7f5539;
+        }
+        .demonstration_principal{
+            background: #e6d5c3;
+            padding:10px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body{
+    font-family: 'segoe ui', sans-serif;
+    display: flex;
+    background: #f3e5e5;
+}
+
+/* BARRA */
+.barra{
+    width: 250px;
+    background: #f5ebe0;
+    padding: 25px;
+    border-right: 1px solid #e0d4c2;
+    height: 100vh;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor-principal{
+    font: 1;
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    padding: 20px;
+}
+
+/* FILA SUPERIOR */
+.fila-superior{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* CAJAS */
+.cliente, .producto, .tipodepago{
+    width: 300px;
+    background: #f5ebe0;
+    padding: 20px;
+    border-radius: 15px;
+    height: 200px;
+}
+
+/* CONTENIDO INTERNO */
+.producto, .tipodepago, .cliente .card{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* TITULOS */
+h3{
+    color: #7f5539;
+}
+
+/* TABLA */
+.contenedor-tabla{
+    width: 100%;
+    display: flex;
+    flex-direction: column ;
+    align-items: center ;
+}
+
+table{
+    width: 90%;
+    border-collapse: collapse;
+    background: #f5ebe0;
+}
+
+th, td{
+    border: 1px solid #e0d4c2;
+    padding: 10px;
+}
+
+th{
+    background: #e0d4c2;
+    color: #7f5539;
+}
+
+/* MENU */
+.menu1{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu1 a{
+    color: #9c6644;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.menu1 a:hover{
+    background: #e3b481;
+}
+
+.logo{
+    color: #7f5539;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.btn{
+    cursor: pointer;
+    padding: 8px 12px;
+    border: none;
+    background: #ac9c8a;
+    color: white;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.btn:hover{
+    background: #af876d;
+}
+
+.btn:active{
+    transform: scale(0.95);
+}
+.total-general{
+    margin-top: 10px;
+    text-align: right;
+    font-weight: bold;
+    color: #7f5539;
+}

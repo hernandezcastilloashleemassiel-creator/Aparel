@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Factura</title>
+
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <script src="botones.js"></script>
+
+<!-- BARRA -->
+<div class="barra">
+    <div class="logo"> 👜 Apparel</div>
+
+    <div class="menu1">
+        <a href="Panel.html" class="active"><i class= "fi fi-rs-home"></i>  Inicio</a>
+            <a href="factura.html"><i class="fi fi-rs-receipt"></i> Facturacion</a>
+            <a href="Inventario.html"><i class="fi fi-rs-inventory-alt"></i> Inventario</a>
+            <a href="Reportes.html"><i class="fi fi-rs-chart-histogram"></i> Reportes</a>
+            <a href="Proveedores.html"><i class="fi fi-rs-users"></i> Proveedores</a>
+            <a href="Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
+    </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="contenedor-principal">
+
+    <!-- FILA ARRIBA -->
+    <div class="fila-superior">
+
+        <div class="cliente">
+            <div class="card">
+                <h3>Cliente</h3>
+                <input type="text" id="nombreCliente" placeholder="Nombre">
+                <input type="text" id="direccionCliente" placeholder="Direccion">
+                <input type="text" id="telefonoCliente" placeholder="Telefono">
+                <button class="btn">Guardar Cliente</button>
+            </div>
+        </div>
+    
+        <div class="producto">
+            <h3>Producto</h3>
+            <input type="text" id="nombreProducto" placeholder="Nombre del producto">
+            <input type="number" id="cantidadProducto" placeholder="Cantidad">
+            <input type="number" id="precioProducto" placeholder="Precio">
+            <button id="btnagregarproducto" class="btn">Agregar Producto</button>
+        </div>
+
+        <div class="tipodepago">
+            <h3>Tipo de Pago</h3>
+            <select>
+                <option>Efectivo</option>
+                <option>Tarjeta</option>
+                <option>Transferencia</option>
+            </select>
+            <input type="number" id="Montopagar" placeholder="Monto a pagar">
+             <input type="number" id="Montorecibido" placeholder="Monto recibido">
+             <input type="number" id="Cambio" placeholder="Cambio">
+        </div>
+
+    </div>  
+
+    <!-- TABLA ABAJO -->
+    <div class="contenedor-tabla">
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-productos"></tbody>
+        </table>
+        <div class="total-general">
+    Total: C$<span id="totalGeneral">0</span>
+</div>
+    </div>
+</div>

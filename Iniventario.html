@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+     <Link rel="Stylesheet" href="Style Inventario.css">
+        <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">👜 Apparel</div>
+
+        <div class="menu">
+            <a href="Panel.html" class="active"><i class= "fi fi-rs-home"></i>  Inicio</a>
+            <a href="factura.html"><i class="fi fi-rs-receipt"></i> Facturacion</a>
+            <a href="Inventario.html"><i class="fi fi-rs-inventory-alt"></i> Inventario</a>
+            <a href="Reportes.html"><i class="fi fi-rs-chart-histogram"></i> Reportes</a>
+            <a href="Proveedores.html"><i class="fi fi-rs-users"></i> Proveedores</a>
+            <a href="Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
+        </div> 
+    </div>
+
+     <!-- Contenido principal -->
+      <div class="main">
+
+            <div class="header">
+                
+                <h1>Inventario</h1>
+                <h2>Gestiona tus productos y stock</h2>
+            
+                <button class="btn"><i class="fa-solid fa-plus"></i> Agregar Producto</button>
+            </div>
+            <div class="card">
+
+                  <div class="search">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      <input type="text" placeholder="Buscar producto, SKU o categoría...">
+                  </div>
+                   <table>
+                        <thead>
+                            <tr>
+                                <th>SKU</th>
+                                <th>Producto</th>
+                                <th>Categoría</th>
+                                <th>Talla</th>
+                                <th>Color</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SKU-001</td>
+                                <td>Camiseta Básica</td>
+                                <td>Camisetas</td>
+                                <td>M</td>
+                                <td>Blanco</td>
+                                <td>C$250</td>
+                            
+                                <td><span class=stock green>45</span></td>
+                                <td class="actions">
+                                    <i class="fa-solid fa-pen"> </i>
+                                    <i class="fa-solid fa-trash"> </i>
+                                </td>
+                            
+                                </tr>
+                                    <tr>
+                                            <td>SKU-002</td>
+                                            <td>Jeans Clásicos</td>
+                                            <td>Pantalones</td>
+                                            <td>32</td>
+                                            <td>Azul</td>
+                                            <td>C$800</td>
+                                                <td><span class=stock green>15</span></td>
+                                                <td class="actions">
+                                                <i class="fa-solid fa-pen"> </i>
+                                                <i class="fa-solid fa-trash"> </i>
+                                            </td>
+                                    </tr>
+
+                                <tr>
+                                        <td>SKU-003</td>
+                                        <td>Chaqueta de Cuero</td>
+                                        <td>Chaquetas</td>
+                                        <td>L</td>
+                                        <td>Jeans</td>
+                                        <td>C$545</td>
+                                        <td><span class=stock red>3</span></td>
+                                        <td class="actions">
+                                            <i class="fa-solid fa-pen"> </i>
+                                            <i class="fa-solid fa-trash"> </i>  
+                                        </td>
+                                </tr>
+                                    <tr>
+                                            <td>SKU-004</td>
+                                            <td>Vestido Floral</td>
+                                            <td>Vestidos</td>
+                                            <td>S</td>
+                                            <td>Rojo</td>
+                                            <td>C$600</td>
+                                            <td><span class=stock green>20</span></td>
+                                            <td class="actions">
+                                                <i class="fa-solid fa-pen"> </i>
+                                                <i class="fa-solid fa-trash"> </i>
+                                            </td>
+                                    </tr>
+
+                                        <tr>
+                                            <td>SKU-005</td>
+                                            <td>Suéter de Lana</td>
+                                            <td>Suéteres</td>
+                                            <td>M</td>
+                                            <td>Gris</td>
+                                            <td>C$350</td>
+                                            <td><span class=stock red>5</span></td>
+                                            <td class="actions">
+                                                <i class="fa-solid fa-pen"> </i>
+                                                <i class="fa-solid fa-trash"> </i>  
+                                            </td>
+                                    </tr>
+
+                                        <tr>
+                                            <td>SKU-006</td>
+                                            <td>Falda Plisada</td>
+                                            <td>Faldas</td>
+                                            <td>S</td>
+                                            <td>Rosa</td>
+                                            <td>C$400</td>
+                                            <td><span class=stock green>12</span></td>
+                                            <td class="actions">
+                                                <i class="fa-solid fa-pen"> </i>
+                                                <i class="fa-solid fa-trash"> </i>  
+                                            </td>
+                                    </tr>
+
+                                        <tr>
+                                            <td>SKU-007</td>
+                                            <td>Camisa de Manga Larga</td>
+                                            <td>Camisetas</td>
+                                            <td>L</td>
+                                            <td>Azul</td>
+                                            <td>C$300</td>
+                                            <td><span class=stock green>25</span></td>
+                                            <td class="actions">
+                                                <i class="fa-solid fa-pen"> </i>
+                                                <i class="fa-solid fa-trash"> </i>  
+                                            </td>
+                                    </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+                    
+                
+              
+            </div>
+
+       
+
+       
+
+
+    
+    
+</body>
+</html>

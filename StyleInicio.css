@@ -1,0 +1,97 @@
+    
+        /* Reset */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Fondo de la pagina fer */
+        body{
+            font-family: 'segoe ui', sans-serif;
+            background: linear-gradient(to bottom, #e8cfcf,#d9b6cc,#c6a6d9);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Contenedor del login */
+        .container{
+            background: #f5ebe0;
+            padding: 40px 30px;
+            border-radius: 20px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0  10px 25px rgba(0, 0, 0, 0.15);
+
+        }
+        /* Logo */
+        .logo{
+            width: 70px;
+            height: 70px;
+            background: #b08968;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            
+        }
+        /* Titulo Apparel */
+        h1{
+            font-size: 28px;
+            color: #7f5539;
+            justify-self: center
+            
+           
+        }
+        /* Subtitulo */
+        .subtitle{
+            font-size: 14px;
+            color: #9c6644;
+            margin-bottom: 30px;
+            justify-self: center;
+        }
+        /* Etiqueta */
+        label{
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #7f5539;
+            font-size: 14px;
+            justify-content: center
+        }
+        /* Campos de texto */
+        input{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #d6ccc2;
+            border-radius: 10px;
+            outline: none;
+        }
+        /*focus en los campos de texto */
+        input:focus{
+            border-color: #b08968;
+        }
+        /* Boton de inicio de sesion */
+        button{    
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #b08968;
+            color: white;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ;
+
+        }   
+        /* Hover en el boton */
+        button:hover{
+            background: #9c6644;
+
+        }
+    
+    

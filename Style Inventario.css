@@ -1,0 +1,137 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    
+}
+body{
+    background: #f3e5e5;
+    display: flex;
+
+}
+
+.sidebar{
+    width: 250px;
+    background: #f5ebe0;
+    padding: 20px;
+    border-right: 1px solid #e0d4c2;
+    height: 100vh;
+}
+.logo{
+    color: #7f5539;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 22px;
+}
+.menu a{
+    display: flex;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color :#9c6644;
+    margin-bottom: 10px;
+
+}
+.menu a:active{
+    background: #edb5c3;
+    font-weight: bold;
+
+}
+.menu a:hover{
+    background: #e6d5c3;
+    cursor: pointer;
+}
+
+/*main*/
+.main{
+    flex: 1;
+    padding: 30px;
+}
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom: 20px;
+}
+.header h1{
+    color: #7f5539;
+}
+.header h2{
+    color: #9c6644;
+}
+ /*botones*/
+.btn{
+    background: #7f5539;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+   
+}
+.btn:hover{
+    background: #9c6644;
+}
+/* Tarjetas */
+.card{
+    background: #f5ebe0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    
+}
+/* Buscador */
+.search{
+    background: #e6d5c3;
+    padding: 10px ;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.search input{
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+}
+/* tabla */
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+   
+    color: #7f5539;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+
+}
+.stock{
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.stock.green{
+    background: #d8f3dc;
+    color: #2d6a4f;
+}
+.stock.red{
+    background: #f8d7da;
+    color: #842029;
+}
+.actions i{
+    margin-bottom: 10 px;
+    cursor: pointer;
+}
+.actions i.fa-pen{
+    color: #7f5539;
+}
+.actions i.fa-trash{
+    color: red;
+}
