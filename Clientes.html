@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clientes</title>
+
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
+<link rel="stylesheet" href="styleCliente.css">
+</head>
+<body>
+    <!-- BARRA -->
+    <div class="barra">
+        <div class="logo"> 👜 Apparel</div>
+
+    <div class="menu a">
+        <a href="Panel.html" class="active"><i class= "fi fi-rs-home"></i>  Inicio</a>
+       <div class="menu-gestion">
+        <a href="#"><i class="fi fi-rs-briefcase"></i> Gestion de catalogo</a>
+        <div class="submenu">
+            <a href="Categorias.html"><i class="fi fi-rs-box"></i> Categorias</a>
+            <a href="Productos.html"><i class="fi fi-rs-shopping-bag"></i> Productos</a>
+            <a href="Clientes.html"><i class="fi fi-rs-users"></i> Clientes</a>
+        </div>
+       </div>
+            <a href="factura.html"><i class="fi fi-rs-receipt"></i> Facturacion</a>
+            <a href="Inventario.html"><i class="fi fi-rs-inventory-alt"></i> Inventario</a>
+            <a href="Reportes.html"><i class="fi fi-rs-chart-histogram"></i> Reportes</a>
+            <a href="Proveedores.html"><i class="fi fi-rs-users"></i> Proveedores</a>
+            <a href="Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
+    </div>
+    
+</div>
+<div class="main">
+    <h1>Clientes</h1>
+    
+    <!--buscador-->
+    <div class="buscador">
+        <input type="text" placeholder="Buscar cliente...">
+        <button><i class="fi fi-rs-search"></i></button>
+    </div>
+     <div class="acciones">
+        <button class="btn-agregar"><i class="fi fi-rs-plus"></i> Agregar Cliente</button>
+    </div>
+    <!-- Contenido principal Clientes -->
+ <table class="tabla-clientes">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo Electrónico</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Aquí se agregarán los clientes  -->
+        <tr>
+            <td>1</td>
+            <td>Juan Pérez</td>
+            <td>juan.perez@email.com</td>
+            <td>123-456-7890</td>
+            <td>Calle Principal 123</td>
+            <td>
+                <button><i class="fi fi-rs-edit"></i></button>
+                <button><i class="fi fi-rs-trash"></i></button>
+            </td>
+        </tr>
+            <tr>
+                <td>2</td>
+                <td>María Gómez</td>
+                <td>maria.gomez@email.com</td>
+                <td>098-765-4321</td>
+                <td>Avenida Secundaria 456</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+            </tr>
+        
+    </tbody>
+</table>
+</div>
+</body>
+</html>

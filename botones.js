@@ -1,19 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
 
     let productos = [];
-    document.getElementById("Montorecibido").addEventListener("input", function() {
-        
-        const montoPagar = parseFloat(document.getElementById("Montopagar").value) || 0;
-        const Montorecibido = parseFloat(this.value) || 0;
 
-        const cambio = Montorecibido - montoPagar;
-
-        document.getElementById("Cambio").value = cambio >= 0 
-            ? cambio.toFixed(2) 
-            : "0.00";
-    });
-
-    //  AGREGAR PRODUCTO
+    // AGREGAR PRODUCTO
     document.getElementById("btnagregarproducto").addEventListener("click", function(){
 
         const nombre = document.getElementById("nombreProducto").value;
@@ -36,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("precioProducto").value = "";
     });
 
-    //MOSTRAR PRODUCTOS
+    // MOSTRAR PRODUCTOS
     function mostrarProductos(){
         const tabla = document.getElementById("tabla-productos");
         tabla.innerHTML = "";
@@ -57,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function(){
             tabla.appendChild(fila);
         });
         document.getElementById("totalGeneral").textContent = totalGeneral;
-        document.getElementById("Montopagar").value = totalGeneral;
     }
 
     // ELIMINAR
@@ -65,4 +53,4 @@ document.addEventListener("DOMContentLoaded", function(){
         productos.splice(index, 1);
         mostrarProductos();
     }
-}); 
+});
