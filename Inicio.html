@@ -22,7 +22,7 @@
 
          <label>Contraseña</label>
 
-            <input type="password" id="password" placeholder="Ingrese su contraseña">
+            <input type="password" id="password" placeholder="Ingrese su contraseña" onkeydown="handlechangetitle(event)">
                  <button onclick="login()">Iniciar sesion</button>
 
                  <script>
@@ -36,6 +36,17 @@
                                     window.location.href = 'Panel.html';
                                 } else {
                                     alert('Usuario o contraseña incorrectos');
+                                }
+                            }
+
+                            function handlechangetitle(event) {
+                                if (event.key === 'Enter') {
+                                    document.querySelector('.subtitle').textContent = 'Bienvenido, admin';
+                                    setTimeout(() => {
+                                        window.location.href = 'Panel.html';
+                                    }, 2000);
+                                } else {
+                                    document.querySelector('.subtitle').textContent = 'Sistema de Facturación';
                                 }
                             }
                 </script>

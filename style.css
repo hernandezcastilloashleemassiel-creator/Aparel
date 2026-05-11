@@ -4,119 +4,72 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-        /* Contenedor del login */
-        .container{
+        /* Fondo de la pagina */
+        body{
+            font-family: 'segoe ui', sans-serif;
+            display: flex;
+            background: #f3e5e5;
+        }
+        /* barra del login */
+        .barra{
+            width: 250px;
             background: #f5ebe0;
-            padding: 40px 30px;
-            border-radius: 20px;
-            width: 350px;
-            text-align: center;
-            box-shadow: 0  10px 25px rgba(0, 0, 0, 0.15);
+            padding: 25px;
+            border-right: 1px solid #e0d4c2;
+            height: 100vh;
 
         }
         /* Logo */
         .logo{
-            font-size: 40px;
             color: #7f5539;
-            margin-bottom: 30px;
+            font-weight: bold;
             font-size: 22px;
-        }
-        /* Titulo Apparel */
-        h1{
-            font-size: 28px;
-            color: #7f5539;
-            justify-self: center
+            margin-bottom: 30px;
             
+        }
+        /* Menu*/
+        .menu a{
+    display: flex;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color :#9c6644;
+    margin-bottom: 10px;
+
+}
+.menu a:active{
+    background: #edb5c3;
+    font-weight: bold;
+
+}
+.menu a:hover{
+    background: #e6d5c3;
+    cursor: pointer;
+}
+
+        .main{
+            flex: 1;
+            padding: 30px;
+        }
+ /* Encabezado del panel */
+        .header h1{
+            color: #7f5539;
            
         }
-        /* Subtitulo */
-        .subtitle{
-            font-size: 14px;
+        .header h2{
             color: #9c6644;
-            margin-bottom: 30px;
-            justify-self: center;
+            border-bottom: 20px ;
+            font-size: 1.17em;
         }
-        /* Etiqueta */
-        form label{
-            display: block;
-            text-align: left;
-            margin-bottom: 5px;
-            color: #7f5539;
-            font-size: 14px;
-            justify-content: center
-        }
-        /* Campos de texto */
-        form input{
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 2px solid #d6ccc2;
-            border-radius: 10px;
-            outline: none;
-        }
-        /*focus en los campos de texto */
-        form input:focus{
-            border-color: #b08968;
-        }
-        /* Boton de inicio de sesion */
-        form button{    
-            width: 100%;
-            padding: 12px;
-            border: none;
-            background: #b08968;
-            color: white;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s ;
 
-        }   
-        /* Hover en el boton */
-        form button:hover{
-            background: #9c6644;
-
-        }
-        /*demonstracion de la pagina */
-        .demonstration{
-            margin-top: 20px;
-            font-size: 13px;
-            color: #7f5539;
-        }
-        .demonstration_principal{
-            background: #e6d5c3;
-            padding:10px;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-        *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* BODY */
-body{
-    font-family: 'segoe ui', sans-serif;
-    display: flex;
-    background: #f3e5e5;
-}
-
-/* BARRA */
-.barra{
-    width: 250px;
-    background: #f5ebe0;
-    padding: 25px;
-    border-right: 1px solid #e0d4c2;
-    height: 100vh;
-}
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor-principal{
     font: 1;
     display: flex;
     flex-direction: column; 
-    gap: 20px;
+    gap: 70px;
     padding: 20px;
 }
 
@@ -219,4 +172,31 @@ th{
     text-align: right;
     font-weight: bold;
     color: #7f5539;
+}
+
+/* submenu gestion */
+.menu-gestion{
+    position: relative;
+
+}
+.submenu{
+    display: none;
+    flex-direction: column;
+    margin-left: 25px;
+    background-color: #e0d4c2;
+    border-radius: 8px;
+    padding: 5px;
+}
+.menu-gestion:hover .submenu{
+    display: flex;
+}
+
+.submenu a{
+  padding: 6px;
+  font-size: 14px;
+  color:aliceblue;
+}
+.submenu a:hover{
+    background-color: #e3b481;
+    border-radius: 5px;
 }

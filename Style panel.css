@@ -1,5 +1,4 @@
-  
-        /* Reset */
+/* Reset */
         *{
             margin: 0;
             padding: 0;
@@ -29,41 +28,31 @@
             
         }
         /* Menu*/
-        .menu1{
-            display: flex;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 10px;
-            flex-direction: column;
-            gap: 10px;
-            
-            
-        }
-        .menu1 a{
-            color: #9c6644;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 10px;
-            transition: 0.03s;
-            
-            
-        }
+        .menu a{
+    display: flex;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color :#9c6644;
+    margin-bottom: 10px;
 
-        .menu1 a:hover {
-            background: #e6d5c3;
-            cursor: pointer;
-        }
-        .menu1 a:active{
-            background: #e9bd8e;
-            color: #7f5539;
-            font-weight: bold;
-        }
+}
+.menu a:active{
+    background: #edb5c3;
+    font-weight: bold;
+
+}
+.menu a:hover{
+    background: #e6d5c3;
+    cursor: pointer;
+}
 
         .main{
             flex: 1;
             padding: 30px;
         }
-        /* Encabezado del panel */
+ /* Encabezado del panel */
         .header h1{
             color: #7f5539;
            
@@ -73,6 +62,35 @@
             border-bottom: 20px ;
             font-size: 1.17em;
         }
+
+    /* submenu gestion */
+.menu-gestion{
+    position: relative;
+
+}
+.submenu{
+    display: none;
+    flex-direction: column;
+    margin-left: 25px;
+    background-color: #e0d4c2;
+    border-radius: 8px;
+    padding: 5px;
+}
+.menu-gestion:hover .submenu{
+    display: flex;
+}
+
+.submenu a{
+  padding: 6px;
+  font-size: 14px;
+  color: #7f5539;
+}
+.submenu a:hover{
+    background-color: #e3b481;
+    border-radius: 5px;
+}
+
+
         /* tarjetas */
         .cards{
             display: grid;
