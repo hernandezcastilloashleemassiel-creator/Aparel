@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventario</title>
-     <Link rel="Stylesheet" href="Style Inventario.css">
-        <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventario</title>
 
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
+<link rel="stylesheet" href="style Inventario.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- BARRA -->
     <div class="barra">
-        <div class="logo">👜 Apparel</div>
+        <div class="logo"> 👜 Apparel</div>
 
-        <div class="menu a">
+    <div class="menu a">
         <a href="Panel.html" class="active"><i class= "fi fi-rs-home"></i>  Inicio</a>
        <div class="menu-gestion">
         <a href="#"><i class="fi fi-rs-briefcase"></i> Gestion de catalogo</a>
@@ -28,152 +30,98 @@
             <a href="Proveedores.html"><i class="fi fi-rs-users"></i> Proveedores</a>
             <a href="Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
     </div>
+    
+</div>
+<div class="main">
+    <h1>Inventario</h1>
+    
+    <!--buscador-->
+    <div class="buscador-acciones">
+    <div class="buscador">
+        <input type="text" placeholder="Buscar producto...">
+        <button><i class="fi fi-rs-search"></i></button>
     </div>
-
-     <!-- Contenido principal -->
-      <div class="main">
-
-            <div class="header">
-                
-                <h1>Inventario</h1>
-                <h2>Gestiona tus productos y stock</h2>
-            
-                <button class="btn"><i class="fa-solid fa-plus"></i> Agregar Producto</button>
-            </div>
-            <div class="card">
-
-                  <div class="search">
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                      <input type="text" placeholder="Buscar producto, SKU o categoría...">
-                  </div>
-                   <table>
-                        <thead>
-                            <tr>
-                                <th>SKU</th>
-                                <th>Producto</th>
-                                <th>Categoría</th>
-                                <th>Talla</th>
-                                <th>Color</th>
-                                <th>Precio</th>
-                                <th>Stock</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>SKU-001</td>
-                                <td>Camiseta Básica</td>
-                                <td>Camisetas</td>
-                                <td>M</td>
-                                <td>Blanco</td>
-                                <td>C$250</td>
-                            
-                                <td><span class=stock green>45</span></td>
-                                <td class="actions">
-                                    <i class="fa-solid fa-pen"> </i>
-                                    <i class="fa-solid fa-trash"> </i>
-                                </td>
-                            
-                                </tr>
-                                    <tr>
-                                            <td>SKU-002</td>
-                                            <td>Jeans Clásicos</td>
-                                            <td>Pantalones</td>
-                                            <td>32</td>
-                                            <td>Azul</td>
-                                            <td>C$800</td>
-                                                <td><span class=stock green>15</span></td>
-                                                <td class="actions">
-                                                <i class="fa-solid fa-pen"> </i>
-                                                <i class="fa-solid fa-trash"> </i>
-                                            </td>
-                                    </tr>
-
-                                <tr>
-                                        <td>SKU-003</td>
-                                        <td>Chaqueta de Cuero</td>
-                                        <td>Chaquetas</td>
-                                        <td>L</td>
-                                        <td>Jeans</td>
-                                        <td>C$545</td>
-                                        <td><span class=stock red>3</span></td>
-                                        <td class="actions">
-                                            <i class="fa-solid fa-pen"> </i>
-                                            <i class="fa-solid fa-trash"> </i>  
-                                        </td>
-                                </tr>
-                                    <tr>
-                                            <td>SKU-004</td>
-                                            <td>Vestido Floral</td>
-                                            <td>Vestidos</td>
-                                            <td>S</td>
-                                            <td>Rojo</td>
-                                            <td>C$600</td>
-                                            <td><span class=stock green>20</span></td>
-                                            <td class="actions">
-                                                <i class="fa-solid fa-pen"> </i>
-                                                <i class="fa-solid fa-trash"> </i>
-                                            </td>
-                                    </tr>
-
-                                        <tr>
-                                            <td>SKU-005</td>
-                                            <td>Suéter de Lana</td>
-                                            <td>Suéteres</td>
-                                            <td>M</td>
-                                            <td>Gris</td>
-                                            <td>C$350</td>
-                                            <td><span class=stock red>5</span></td>
-                                            <td class="actions">
-                                                <i class="fa-solid fa-pen"> </i>
-                                                <i class="fa-solid fa-trash"> </i>  
-                                            </td>
-                                    </tr>
-
-                                        <tr>
-                                            <td>SKU-006</td>
-                                            <td>Falda Plisada</td>
-                                            <td>Faldas</td>
-                                            <td>S</td>
-                                            <td>Rosa</td>
-                                            <td>C$400</td>
-                                            <td><span class=stock green>12</span></td>
-                                            <td class="actions">
-                                                <i class="fa-solid fa-pen"> </i>
-                                                <i class="fa-solid fa-trash"> </i>  
-                                            </td>
-                                    </tr>
-
-                                        <tr>
-                                            <td>SKU-007</td>
-                                            <td>Camisa de Manga Larga</td>
-                                            <td>Camisetas</td>
-                                            <td>L</td>
-                                            <td>Azul</td>
-                                            <td>C$300</td>
-                                            <td><span class=stock green>25</span></td>
-                                            <td class="actions">
-                                                <i class="fa-solid fa-pen"> </i>
-                                                <i class="fa-solid fa-trash"> </i>  
-                                            </td>
-                                    </tr>
-
-                        </tbody>
-
-                    </table>
-
-
-                    
-                
-              
-            </div>
-
-       
-
-       
-
-
-    
-    
+     <div class="acciones">
+        <button class="btn-agregar"><i class="fi fi-rs-plus"></i> Agregar Producto</button>
+    </div>  
+    </div>
+    <!-- Contenido principal Productos -->
+ <table class="tabla-productos">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Categoría</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Aquí se agregarán los proveedores  -->
+        <tr>
+            <td>Blusa de verano</td>
+            <td>Blusa ligera y fresca para el verano</td>
+            <td>C$250</td>
+            <td>5</td>
+            <td>Blusa</td>
+            <td>Activo</td>
+            <td>
+                <button><i class="fi fi-rs-edit"></i></button>
+                <button><i class="fi fi-rs-trash"></i></button>
+            </td>
+        </tr>
+            <tr>
+                <td>pantalon</td>
+                <td>Pantalón ligero y cómodo</td>
+                <td>C$300</td>
+                <td>3</td>
+                <td>Pantalón</td>
+                <td>Activo</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>   
+            <tr>
+                <td>Blusa de primavera</td>
+                <td>Blusa con estampado floral</td>
+                <td>C$100</td>
+                <td>4</td>
+                <td>Blusa</td>
+                <td>Activo</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>Vestido</td>
+                <td>Vestido elegante </td>
+                <td>C$500</td>
+                <td>5</td>
+                <td>Vestido</td>
+                <td>Activo</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>
+             <tr>
+                <td>gorra </td>
+                <td>Gorra de algodón</td>
+                <td>C$350</td>
+                <td>7</td>
+                <td>Gorra</td>
+                <td>Activo</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>
+    </tbody>
+</table>
+</div>
 </body>
 </html>

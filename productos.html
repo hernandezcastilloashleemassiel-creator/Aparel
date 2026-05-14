@@ -7,6 +7,7 @@
 
 <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
 <link rel="stylesheet" href="styleProductos.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- BARRA -->
@@ -32,8 +33,88 @@
     
 </div>
 <div class="main">
-    <h1>Productos </h1>
+    <h1>Productos</h1>
     
+    <!--buscador-->
+    <div class="buscador-acciones">
+    <div class="buscador">
+        <input type="text" placeholder="Buscar producto...">
+        <button><i class="fi fi-rs-search"></i></button>
+    </div>
+     <div class="acciones">
+        <button class="btn-agregar"><i class="fi fi-rs-plus"></i> Agregar Producto</button>
+    </div>  
+    </div>
+    <!-- Contenido principal Productos -->
+ <table class="tabla-productos">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Aquí se agregarán los proveedores  -->
+        <tr>
+            <td>Blusa de verano</td>
+            <td>Blusa ligera y fresca para el verano</td>
+            <td>C$250</td>
+            <td>5</td>
+            <td>Blusa</td>
+            <td>
+                <button><i class="fi fi-rs-edit"></i></button>
+                <button><i class="fi fi-rs-trash"></i></button>
+            </td>
+        </tr>
+            <tr>
+                <td>pantalon</td>
+                <td>Pantalón ligero y cómodo</td>
+                <td>C$300</td>
+                <td>3</td>
+                <td>Pantalón</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+            </tr>   
+            <tr>
+                <td>Blusa de primavera</td>
+                <td>Blusa con estampado floral</td>
+                <td>C$100</td>
+                <td>4</td>
+                <td>Blusa</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>Vestido</td>
+                <td>Vestido elegante </td>
+                <td>C$500</td>
+                <td>5</td>
+                <td>Vestido</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>
+             <tr>
+                <td>gorra </td>
+                <td>Gorra de algodón</td>
+                <td>C$350</td>
+                <td>7</td>
+                <td>Gorra</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>
+    </tbody>
+</table>
 </div>
 </body>
 </html>
