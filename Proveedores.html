@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clientes</title>
+<title>Proveedores</title>
 
 <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
-<link rel="stylesheet" href="styleCliente.css">
+<link rel="stylesheet" href="styleProveedores.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- BARRA -->
@@ -32,8 +33,88 @@
     
 </div>
 <div class="main">
-    <h1>Clientes</h1>
+    <h1>Proveedores</h1>
     
+    <!--buscador-->
+    <div class="buscador-acciones">
+    <div class="buscador">
+        <input type="text" placeholder="Buscar proveedor...">
+        <button><i class="fi fi-rs-search"></i></button>
+    </div>
+     <div class="acciones">
+        <button class="btn-agregar"><i class="fi fi-rs-plus"></i> Agregar Proveedor</button>
+    </div>  
+    </div>
+    <!-- Contenido principal Proveedores -->
+ <table class="tabla-proveedores">
+    <thead>
+        <tr>
+            <th>Empresa</th>
+            <th>Vendedor</th>
+            <th>Correo Electrónico</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Aquí se agregarán los proveedores  -->
+        <tr>
+            <td>Shein</td>
+            <td>Juan Pérez</td>
+            <td>juan.perez@email.com</td>
+            <td>123-456-7890</td>
+            <td>Calle Principal 123</td>
+            <td>
+                <button><i class="fi fi-rs-edit"></i></button>
+                <button><i class="fi fi-rs-trash"></i></button>
+            </td>
+        </tr>
+            <tr>
+                <td>Zara</td>
+                <td>María Gómez</td>
+                <td>maria.gomez@email.com</td>
+                <td>098-765-4321</td>
+                <td>Avenida Secundaria 456</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+            </tr>   
+            <tr>
+                <td>H&M</td>
+                <td>Carlos Rodríguez</td>
+                <td>carlos.rodriguez@email.com</td>
+                <td>555-1234</td>
+                <td>Calle Terciaria 789</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>Forever 21</td>
+                <td>Ana Martínez</td>
+                <td>ana.martinez@email.com</td>
+                <td>555-5678</td>
+                <td>Avenida Principal 101</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>
+             <tr>
+                <td>Adidas </td>
+                <td>Pedro Sánchez</td>
+                <td>pedro.sanchez@email.com</td>
+                <td>555-9012</td>
+                <td>Calle Cuarta 101</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>
+    </tbody>
+</table>
 </div>
 </body>
 </html>

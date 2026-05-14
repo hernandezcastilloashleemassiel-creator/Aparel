@@ -49,12 +49,12 @@
 }
 
         .main{
+            font-family: 'poppins', sans-serif;
             flex: 1;
-            width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
             padding: 50px;
+            color: #7f5539;
         }
  /* Encabezado del panel */
         .header h1{
@@ -95,6 +95,7 @@
 }
 /* Tabla de clientes */
 .tabla-clientes{
+    width: 100%;
     border-collapse: collapse;
     margin-top: 65px;
     border-radius: 5px 5px 0 0;
@@ -120,6 +121,9 @@
 .tabla-clientes tbody tr:last-of-type{
     border-bottom: 2px solid #7f5539;
 }
+.tabla-clientes tbody td {
+    color : #000000;
+}
 /* busqueda */
 .buscador {
     margin-top: 30px;
@@ -142,12 +146,21 @@
     padding: 8px 15px;
     border-radius: 20px; 
     border: 1px solid #dccdb6;
-    width: 350px;
+    width: 700px;
 }
 
 .buscador i {
     color: #7f5539;
-    margin-right: 10px;
+    margin-right: 15px;
+    font-size: 18px;
+
+}
+.buscador button {
+    border: none;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
 }
 
 .buscador input {
@@ -156,6 +169,7 @@
     background: transparent;
     width: 100%;
     color: #7f5539;
+    font-size: 16px;
 }
  .acciones {
     margin-left: auto; 
@@ -177,4 +191,13 @@
 .btn-agregar:hover{
     background: #7f5539;
     transform: translateY(-2px);
+}
+
+.buscador-acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+    padding: 0 15px;
 }

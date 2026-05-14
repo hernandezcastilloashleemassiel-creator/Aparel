@@ -192,9 +192,9 @@ th{
 }
 
 .submenu a{
-  padding: 6px;
+   padding: 6px;
   font-size: 14px;
-  color:aliceblue;
+  color: #7f5539;
 }
 .submenu a:hover{
     background-color: #e3b481;

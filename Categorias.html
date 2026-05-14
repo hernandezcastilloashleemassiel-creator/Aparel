@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Categorias</title>
+<title>Categorías</title>
 
 <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
 <link rel="stylesheet" href="styleCategorias.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- BARRA -->
@@ -32,8 +33,78 @@
     
 </div>
 <div class="main">
-    <h1>Categorias</h1>
+    <h1>Categorías</h1>
     
+    <!--buscador-->
+    <div class="buscador-acciones">
+    <div class="buscador">
+        <input type="text" placeholder="Buscar categoría...">
+        <button><i class="fi fi-rs-search"></i></button>
+    </div>
+     <div class="acciones">
+        <button class="btn-agregar"><i class="fi fi-rs-plus"></i> Agregar Categoría</button>
+    </div>  
+    </div>
+    <!-- Contenido principal Categorías -->
+ <table class="tabla-categorias">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Aquí se agregarán los proveedores  -->
+        <tr>
+            <td>Blusa</td>
+            <td>camisa tirantes</td>
+            <td>Activo</td>
+            <td>
+                <button><i class="fi fi-rs-edit"></i></button>
+                <button><i class="fi fi-rs-trash"></i></button>
+            </td>
+        </tr>
+            <tr>
+                <td>Vestido</td>
+                <td>Vestido elegante</td>
+                <td>Activo</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>   
+            <tr>
+                <td>Camisetas</td>
+                <td>Camisetas de algodón</td>
+                <td>Activo</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>Gorra</td>
+                <td>Gorra de algodón</td>
+                <td>Activo</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+            </tr>
+             <tr>
+                <td>Camisas</td>
+                <td>Camisas casuales</td>
+                <td>Inactivo</td>
+                <td>
+                    <button><i class="fi fi-rs-edit"></i></button>
+                    <button><i class="fi fi-rs-trash"></i></button>
+                </td>
+                    
+            </tr>
+    </tbody>
+</table>
 </div>
 </body>
 </html>
