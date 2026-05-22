@@ -25,70 +25,91 @@
             <a href="Categorias.html"><i class="fi fi-rs-box"></i> Categorias</a>
             <a href="Productos.html"><i class="fi fi-rs-shopping-bag"></i> Productos</a>
             <a href="Clientes.html"><i class="fi fi-rs-users"></i> Clientes</a>
+            <a href="Proveedores.html"><i class="fi fi-rs-users"></i> Proveedores</a>
         </div>
        </div>
             <a href="factura.html"><i class="fi fi-rs-receipt"></i> Facturacion</a>
             <a href="Inventario.html"><i class="fi fi-rs-inventory-alt"></i> Inventario</a>
             <a href="Reportes.html"><i class="fi fi-rs-chart-histogram"></i> Reportes</a>
-            <a href="Proveedores.html"><i class="fi fi-rs-users"></i> Proveedores</a>
             <a href="Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
     </div>
 </div>
 
 <!-- CONTENIDO -->
 <div class="contenedor-principal">
-
-    <!-- FILA ARRIBA -->
-    <div class="fila-superior">
-
-        <div class="cliente">
-            <div class="card">
-                <h3>Cliente</h3>
-                <input type="text" id="nombreCliente" placeholder="Nombre">
-                <input type="text" id="direccionCliente" placeholder="Direccion">
-                <input type="text" id="telefonoCliente" placeholder="Telefono">
-                <button class="btn">Guardar Cliente</button>
-            </div>
-        </div>
-    
-        <div class="producto">
-            <h3>Producto</h3>
-            <input type="text" id="nombreProducto" placeholder="Nombre del producto">
-            <input type="number" id="cantidadProducto" placeholder="Cantidad">
-            <input type="number" id="precioProducto" placeholder="Precio">
-            <button id="btnagregarproducto" class="btn">Agregar Producto</button>
-        </div>
-
-        <div class="tipodepago">
-            <h3>Tipo de Pago</h3>
-            <select>
-                <option>Efectivo</option>
-                <option>Tarjeta</option>
-                <option>Transferencia</option>
-            </select>
-            <input type="number" id="Montopagar" placeholder="Monto a pagar">
-             <input type="number" id="Montorecibido" placeholder="Monto recibido">
-             <input type="number" id="Cambio" placeholder="Cambio">
-        </div>
-
-    </div>  
-
+ 
     <!-- TABLA ABAJO -->
-    <div class="contenedor-tabla">
+    <div class="tabla-productos">
         <table>
             <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th>Total</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio und</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+        <!--BtnModal-->
+        <div class="btn-modal">
+            <label for="Modal">
+                Agregar Producto
+            </label>
+            <!--PantallaModal-->
+            <input type="checkbox" id="Modal">
+            <div class="contenedor-modal">
+                <div class="contenido-modal">
+                    <div class="btn-cerrar">
+                    <label for="Modal">X</label>
+                </div>
+                    <h3>Agregar Producto</h3>
+                    <input type="text" id="nombreProducto" placeholder="Nombre del producto">
+                    <select id="CategoriaProducto" placeholder="Categoria Producto">
+                        <option value="" disabled selected> Categorias</option>
+                        <option value="Camisetas"> Camisetas</option>
+                        <option value="Pantalon"> Pantalon</option>
+                        <option value="Vestido"> Vestido</option>
+                        <option value="Blusa"> Blusa</option>
+                        <option value="Gorra">Gorra</option>
+                    </select>
+                    <input type="number" id="precioundProducto" placeholder="Preciound">
+                    <input type="number" id="cantidadProducto" placeholder="Cantidad">
+                    
+              <button id="btnagregarproducto" class="btn">Agregar Producto</button>
+                </div>
+            </div>
+        </div>
             <tbody id="tabla-productos"></tbody>
         </table>
-        <div class="total-general">
-    Total: C$<span id="totalGeneral">0</span>
-</div>
     </div>
+</div>
+<!--Resumen -->
+<div class="Resumen">
+    <h3><i class="fi fi-rs-shopping-cart"></i> Resumen de venta</h3>
+ <div class="tipodepago">
+            <h3>Tipo de Pago</h3>
+        <div class="Tipos">
+        <button> <h3> <i class="fi fi-rs-coins"></i> Efectivo</h3> </button>
+        <button> <h3><i class="fi fi-rs-credit-card"></i> Tarjeta</h3> </button>
+        <button> <h3><i class="fi fi-rs-bank"></i> Transfe.</h3> </button>
+        </div>
+</div>
+    <div class="total-general">
+        Total: C$<span id="totalGeneral">0</span>
+    </div>
+    <!--BtnmodalFactura-->
+        <div class="btn-Factura">
+            <label for="Factura">
+                Generar Factura
+            </label>
+            <!--PantallaModal-->
+            <input type="checkbox" id="Factura">
+            <div class="contenedor-Factura">
+                <div class="contenido-Factura">
+                    <div class="btn-cerrar-factura">
+                    <label for="Factura">X</label>
+        </div>
+</div>
+
 </div>

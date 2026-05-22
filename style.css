@@ -17,7 +17,7 @@
             padding: 25px;
             border-right: 1px solid #e0d4c2;
             height: 100vh;
-
+            margin-right: 35px;
         }
         /* Logo */
         .logo{
@@ -50,7 +50,8 @@
 
         .main{
             flex: 1;
-            padding: 30px;
+            padding: 30px ;
+            box-sizing: border-box;
         }
  /* Encabezado del panel */
         .header h1{
@@ -66,65 +67,50 @@
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor-principal{
-    font: 1;
     display: flex;
-    flex-direction: column; 
-    gap: 70px;
-    padding: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
 }
-
-/* FILA SUPERIOR */
-.fila-superior{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.producto{
+    flex: 1;
 }
-
-/* CAJAS */
-.cliente, .producto, .tipodepago{
-    width: 300px;
-    background: #f5ebe0;
-    padding: 20px;
-    border-radius: 15px;
-    height: 200px;
-}
-
-/* CONTENIDO INTERNO */
-.producto, .tipodepago, .cliente .card{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-/* TITULOS */
 h3{
     color: #7f5539;
 }
 
-/* TABLA */
-.contenedor-tabla{
+.tabla-productos{
     width: 100%;
-    display: flex;
-    flex-direction: column ;
-    align-items: center ;
-}
-
-table{
-    width: 90%;
     border-collapse: collapse;
-    background: #f5ebe0;
+    margin-top: 100px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-
-th, td{
-    border: 1px solid #e0d4c2;
-    padding: 10px;
-}
-
-th{
-    background: #e0d4c2;
+.tabla-productos thead tr{
+    background-color: #f5ebe0;
     color: #7f5539;
+    text-align: left;
+    font-weight: bold;
+}
+.tabla-productos th,
+.tabla-productos td{
+    padding: 12px;
+    width: 20%;
+}
+.tabla-productos tbody tr{
+    border-bottom: 1px solid #dccdb6;
+}
+.tabla-productos tbody tr:nth-of-type(even){
+    background-color: #f5ebe0;
+}
+.tabla-productos tbody tr:last-of-type{
+    border-bottom: 2px solid #7f5539;
+}
+.tabla-productos tbody td {
+    color : #000000;
 }
 
 /* MENU */
@@ -199,4 +185,191 @@ th{
 .submenu a:hover{
     background-color: #e3b481;
     border-radius: 5px;
+}
+/*resumen*/
+.Resumen{
+    background: #f5ebe0;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    width: 23%;
+    min-height: 500px;
+    margin-left: 35px;
+}
+
+/*tipo de pago*/
+.tipodepago{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.tipodepago button {
+    flex-direction: column;
+    justify-content: center;
+    padding : 12px 12px;
+    border: none;
+    border-radius: 10px;
+    background-color:#e6d5c3;
+    cursor: pointer;
+}
+.tipodepago button:hover {
+    background-color: #af876d;
+}
+
+.tipodepago button i {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.tipodepago button h3 {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 500;
+}
+.Tipos {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: stretch;
+gap: 10px;
+margin-top: 15px;
+width: 100%;
+}
+/*eliminar*/
+
+
+h2 {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+/*btn modal*/
+.btn-modal{
+    display: flex;
+    justify-content: flex-end;
+   
+}
+.btn-modal label {
+    padding: 10px 20px;
+    background: linear-gradient(135deg,#c99a7a,#af876d);
+    color: white;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(175,135,109,0.25);
+}
+.btn-modal label:hover{
+    transform: translateY(-2px);
+    background: linear-gradient(135deg,#b98968,#9c745c);
+}
+#Modal {
+    display: none;
+}
+.contenedor-modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.08);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(3px);
+}
+#Modal:checked ~ .contenedor-modal {
+    display: flex;
+}
+.contenido-modal {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+}
+.contenedor-modal .btn-cerrar {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+/* INPUTS DEL MODAL */
+.contenido-modal input,
+.contenido-modal select{
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 12px;
+
+    border: 2px solid #ead7c4;
+    border-radius: 12px;
+
+    background: #faf7f3;
+
+    font-size: 14px;
+    color: #7f5539;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+/* EFECTO AL HACER CLICK */
+.contenido-modal input:focus,
+.contenido-modal select:focus{
+    border-color: #c99a7a;
+    background: #ffffff;
+
+    box-shadow: 0 0 10px rgba(201,154,122,0.25);
+}
+
+/* PLACEHOLDER */
+.contenido-modal input::placeholder{
+    color: #b08968;
+}
+
+/*btn modal factura*/
+.btn-Factura label {
+    padding: 5px 15px;
+    background-color: #af876d;
+    color: #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300MS ease;
+    
+}
+#Factura {
+    display: none;
+}
+.contenedor-Factura {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.08);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#Factura:checked ~ .contenedor-Factura {
+    display: flex;
+}
+.contenido-Factura {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+}
+.contenedor-Factura .btn-cerrar-factura {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
 }
