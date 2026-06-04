@@ -59,12 +59,11 @@ document.addEventListener("DOMContentLoaded", function(){
     }
      // EDITAR
     window.editarProducto = function(index){
-        let productos = productos(index);
-        let nuevacantidad = perseInt(prompt("", productos.cantidad));
-        if (nuevacantidad) {
+        let productos = productos[index];
+        let nuevacantidad = parseInt(prompt("Ingrese la nueva cantidad:", productos.cantidad));
+        if (nuevacantidad && !isNaN(nuevacantidad)) {
             productos[index].cantidad = nuevacantidad;
         mostrarProductos();
         }
     }
-
 });

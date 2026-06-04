@@ -87,6 +87,28 @@
 <!--Resumen -->
 <div class="Resumen">
     <h3><i class="fi fi-rs-shopping-cart"></i> Resumen de venta</h3>
+    
+        <div class="card">
+        <h3>Cliente</h3>
+        <input type="text" placeholder="Buscar cliente">
+            <div class="cliente">
+            <div class="foto"> <i class="fi fi-rs-user"></i> </div>
+                <div>
+                <h4>Juan Pérez</h4>
+                <p>8888-8888</p>
+                <p>juan@email.com</p>
+                </div>
+            </div>
+        </div>
+
+             <!-- RESUMEN PRODUCTOS -->
+        <div class="card"> 
+        <h3>Resumen productos</h3>
+        <p>Productos <span id="cantidadProductos">0</span></p>
+        <p>Subtotal C$<span id="subtotal">0</span></p>
+        <p>IVA C$<span id="iva">0</span></p>
+    </div>
+
  <div class="tipodepago">
     
             <h3>Tipo de Pago</h3>
@@ -108,6 +130,9 @@
             <input type="checkbox" id="Factura">
             <div class="contenedor-Factura">
                 <div class="contenido-Factura">
+                    <h3>Factura</h3>
+                    <div id="detalleFactura"></div>
+                    <p>Gracias por su compra</p>
                     <div class="btn-cerrar-factura">
                     <label for="Factura">X</label>
         </div>
