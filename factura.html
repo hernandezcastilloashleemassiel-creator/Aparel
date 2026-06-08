@@ -30,6 +30,7 @@
        </div>
             <a href="factura.html"><i class="fi fi-rs-receipt"></i> Facturacion</a>
             <a href="Inventario.html"><i class="fi fi-rs-inventory-alt"></i> Inventario</a>
+            <a href="Usuarios.html"><i class="fi fi-rs-users"></i> Usuarios</a>
             <a href="Reportes.html"><i class="fi fi-rs-chart-histogram"></i> Reportes</a>
             <a href="Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
     </div>
@@ -37,16 +38,20 @@
 
 <!-- CONTENIDO -->
 <div class="contenedor-principal">
+    <div class="header">
+        <h1>Facturación</h1>
+    </div>
  
     <!-- TABLA ABAJO -->
     <div class="tabla-productos">
         <table>
             <thead>
         <tr>
-            <th>Nombre</th>
+            <th>Código</th>
+            <th>Descripción</th>
             <th>Categoría</th>
-            <th>Precio und</th>
             <th>Cantidad</th>
+            <th>Precio und</th>
             <th>Total</th>
             <th>Acciones</th>
         </tr>
@@ -64,15 +69,9 @@
                     <label for="Modal">X</label>
                 </div>
                     <h3>Agregar Producto</h3>
-                    <input type="text" id="nombreProducto" placeholder="Nombre del producto">
-                    <select id="CategoriaProducto" placeholder="Categoria Producto">
-                        <option value="" disabled selected> Categorias</option>
-                        <option value="Camisetas"> Camisetas</option>
-                        <option value="Pantalon"> Pantalon</option>
-                        <option value="Vestido"> Vestido</option>
-                        <option value="Blusa"> Blusa</option>
-                        <option value="Gorra">Gorra</option>
-                    </select>
+                    <input type="text" id="CodigoProducto" placeholder="Código del producto">
+                    <input type="text" id="DescripcionProducto" placeholder="Descripción del producto">
+                    <input type="text" id="CategoriaProducto" placeholder="Categoria Producto">
                     <input type="number" id="precioundProducto" placeholder="Preciound">
                     <input type="number" id="cantidadProducto" placeholder="Cantidad">
                     

@@ -54,6 +54,11 @@
             box-sizing: border-box;
         }
  /* Encabezado del panel */
+ .header{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 40px;
+ }
         .header h1{
             color: #7f5539;
            
@@ -67,10 +72,6 @@
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor-principal{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 40px;
     width: 100%;
     box-sizing: border-box;
 }

@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Categorías</title>
+<title>Usuarios</title>
 
 <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
-<link rel="stylesheet" href="styleCategorias.css">
+<link rel="stylesheet" href="StyleUsuarios.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -34,78 +34,91 @@
     
 </div>
 <div class="main">
-    <h1>Categorías</h1>
+    <h1>Usuarios</h1>
     
     <!--buscador-->
     <div class="buscador-acciones">
     <div class="buscador">
-        <input type="text" placeholder="Buscar categoría...">
+        <input type="text" placeholder="Buscar usuario...">
         <button><i class="fi fi-rs-search"></i></button>
     </div>
      <div class="acciones">
-        <button class="btn-agregar"><i class="fi fi-rs-plus"></i> Agregar Categoría</button>
+        <button class="btn-agregar"><i class="fi fi-rs-plus"></i> Agregar Usuario</button>
     </div>  
     </div>
-    <!-- Contenido principal Categorías -->
- <table class="tabla-categorias">
+    <!-- Contenido principal Usuarios -->
+ <table class="tabla-usuarios">
     <thead>
         <tr>
             <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Estado</th>
+            <th>Cargo</th>
+            <th>Correo</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-        <!-- Aquí se agregarán los proveedores  -->
+        <!-- Aquí se agregarán los Usuarios  -->
         <tr>
-            <td>Blusa</td>
-            <td>camisa tirantes</td>
-            <td>Activo</td>
+            <td>Ashlee Hernandez</td>
+            <td>Administrador</td>
+            <td>ashlee.hernandez@gmail.com</td>
             <td>
                 <button><i class="fi fi-rs-edit"></i></button>
                 <button><i class="fi fi-rs-trash"></i></button>
             </td>
         </tr>
             <tr>
-                <td>Vestido</td>
-                <td>Vestido elegante</td>
-                <td>Activo</td>
+                <td>Norling Gutierrez</td>
+                <td>Administrador</td>
+                <td>norling.gutierrez@gmail.com</td>
                 <td>
+                    
                     <button><i class="fi fi-rs-edit"></i></button>
                     <button><i class="fi fi-rs-trash"></i></button>
-                </td>
             </tr>   
             <tr>
-                <td>Camisetas</td>
-                <td>Camisetas de algodón</td>
-                <td>Activo</td>
+                <td>Anahis Molina</td>
+                <td>Vendedor</td>
+                <td>anahis.molina@gmail.com</td>
                 <td>
                     <button><i class="fi fi-rs-edit"></i></button>
                     <button><i class="fi fi-rs-trash"></i></button>
                 </td>
             </tr>
             <tr>
-                <td>Gorra</td>
-                <td>Gorra de algodón</td>
-                <td>Activo</td>
+                <td>Fernanda Narvaez</td>
+                <td>Vendedora</td>
+                <td>fernanda.narvaez@gmail.com</td>
                 <td>
                     <button><i class="fi fi-rs-edit"></i></button>
                     <button><i class="fi fi-rs-trash"></i></button>
                 </td>
-            </tr>
-             <tr>
-                <td>Camisas</td>
-                <td>Camisas casuales</td>
-                <td>Inactivo</td>
-                <td>
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-                </td>
-                    
             </tr>
     </tbody>
 </table>
+</div>
+<div class="Resumen">
+    <h2>Resumen de Usuarios</h2>
+    <div class="card">
+    <h3>Total Usuarios</h3>
+    <p>4</p>
+    </div>
+    <div class="card">
+    <h3>Administradores</h3>
+    <p>2</p>
+    </div>
+    <div class="card">
+    <h3>Vendedores</h3> 
+    <p>2</p>
+    </div>
+    <div class="card">
+    <h3> Cajeros</h3>
+    <p>0</p>
+    </div>
+    <div class="card">
+    <h3>Ultimo Usuario Agregado</h3>
+    <p>Fernanda Narvaez</p>
+</div>  
 </div>
 </body>
 </html>
