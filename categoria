@@ -1,0 +1,145 @@
+using Xunit;
+using Moq;
+using Microsoft.AspNetCore.Mvc;
+using ApparelApi.Controllers;
+using CapaEntidad;
+using CapaEntidad.DTOs;
+using CapaNegocio.Servicio.Interface;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace ApparelApi.Test.Categoria
+{
+    public class CategoriaControllerTest
+    {
+        private readonly Mock<ICategoriaServicio> _categoriaServicioMock;
+        private readonly CategoriaController _controller;
+
+        public CategoriaControllerTest()
+        {
+            _categoriaServicioMock = new Mock<ICategoriaServicio>();
+            _controller = new CategoriaController(_categoriaServicioMock.Object);
+        }
+
+        [Fact]
+        public async Task Listar_RetornaOkConListaDeCategorias()
+        {
+            // Arrange
+            var listaCategorias = new List<CategoriaDTO>
+            {
+                new CategoriaDTO
+                {
+                    Id = 1,
+                    Nombre = "Ropa",
+                    Activo = true
+                }
+            };
+
+            _categoriaServicioMock
+                .Setup(x => x.ListarCategoria())
+                .ReturnsAsync(listaCategorias);
+
+            // Act
+            var resultado = await _controller.Listar();
+
+            // Assert
+            var okResult = Assert.IsType<OkObjectResult>(resultado);
+            Assert.Equal(listaCategorias, okResult.Value);
+        }
+
+        [Fact]
+        public async Task Insertar_CategoriaValida_RetornaOk()
+        {
+            // Arrange
+            var categoriaDTO = new CategoriaDTO
+            {
+                Nombre = "Calzado",
+                Activo = true
+            };
+
+            _categoriaServicioMock
+                .Setup(x => x.InsertarCategoria(It.IsAny<CategoriaDTO>()))
+                .ReturnsAsync(true);
+
+            // Act
+            var resultado = await _controller.Insertar(categoriaDTO);
+
+            // Assert
+            Assert.IsType<OkObjectResult>(resultado);
+        }
+
+        [Fact]
+        public async Task Insertar_ErrorAlInsertar_RetornaBadRequest()
+        {
+            // Arrange
+            var categoriaDTO = new CategoriaDTO
+            {
+                Nombre = "Calzado",
+                Activo = true
+            };
+
+            _categoriaServicioMock
+                .Setup(x => x.InsertarCategoria(It.IsAny<CategoriaDTO>()))
+                .ReturnsAsync(false);
+
+            // Act
+            var resultado = await _controller.Insertar(categoriaDTO);
+
+            // Assert
+            Assert.IsType<BadRequestObjectResult>(resultado);
+        }
+
+      
+
+        [Fact]
+        public async Task Actualizar_CategoriaNoExiste_RetornaNotFound()
+        {
+            // Arrange
+            int idInexistente = 99;
+
+            var categoriaDTO = new CategoriaDTO
+            {
+                Nombre = "No Existe",
+                Activo = true
+            };
+
+            _categoriaServicioMock
+                .Setup(x => x.ObtenerCategoriaPorId(idInexistente))
+                .ReturnsAsync((CategoriaDTO)null!);
+
+            // Act
+            var resultado = await _controller.Actualizar(idInexistente, categoriaDTO);
+
+            // Assert
+            Assert.IsType<NotFoundObjectResult>(resultado);
+        }
+
+        [Fact]
+        public async Task Eliminar_CategoriaExistente_RetornaOk()
+        {
+            // Arrange
+            int idExistente = 1;
+
+            var categoriaExistente = new CategoriaDTO
+            {
+                Id = idExistente,
+                Nombre = "A Eliminar",
+                Activo = true
+            };
+
+            _categoriaServicioMock
+                .Setup(x => x.ObtenerCategoriaPorId(idExistente))
+                .ReturnsAsync(categoriaExistente);
+
+            _categoriaServicioMock
+                .Setup(x => x.EliminarCategoria(It.IsAny<CategoriaDTO>()))
+                .Returns(true);
+
+            // Act
+            var resultado = await _controller.Eliminar(idExistente);
+
+            // Assert
+            Assert.IsType<OkObjectResult>(resultado);
+        }
+    }
+}
