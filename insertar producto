@@ -1,0 +1,43 @@
+using Xunit;
+using Moq;
+using Microsoft.AspNetCore.Mvc;
+using ApparelApi.Controllers;
+using CapaEntidad.DTOs;
+using CapaNegocio.Servicio.Interface;
+using System.Threading.Tasks;
+
+namespace ApparelApi.Test.Producto
+{
+    public class ProductoControllerTest
+    {
+        [Fact]
+        public async Task Insertar_ProductoValido_RetornaOk()
+        {
+            // Arrange
+            var productoServicioMock = new Mock<IProductoServicio>();
+
+            var productoDTO = new ProductoDTO
+            {
+                CategoriaId = 1,
+                Nombre = "Camisa",
+                Descripcion = "Camisa negra",
+                Precio = 500,
+                Activo = true
+            };
+
+            productoServicioMock
+                .Setup(x => x.InsertarProducto(It.IsAny<ProductoDTO>()))
+                .ReturnsAsync(true);
+
+            var controller = new ProductoController(productoServicioMock.Object);
+
+            // Act
+            var resultado = await controller.Insertar(productoDTO);
+
+            // Assert
+            Assert.IsType<OkObjectResult>(resultado);
+        }
+
+        
+    }
+}
