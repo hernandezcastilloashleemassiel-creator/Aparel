@@ -1,0 +1,46 @@
+using Xunit;
+using Moq;
+using Microsoft.AspNetCore.Mvc;
+using ApparelApi.Controllers;
+using CapaEntidad.DTOs;
+using CapaNegocio.Servicio.Interface;
+using System.Threading.Tasks;
+
+namespace ApparelApi.Test.Producto
+{
+    public class ProductoControllerTest2
+    {
+        // ... Tu test anterior (Insertar_ProductoValido_RetornaOk) se queda aquí arriba ...
+
+        [Fact]
+        public async Task Insertar_ServicioFalla_RetornaBadRequest()
+        {
+            // Arrange
+            var productoServicioMock = new Mock<IProductoServicio>();
+
+            var productoDTO = new ProductoDTO
+            {
+                CategoriaId = 1,
+                Nombre = "Camisa Defectuosa",
+                Descripcion = "No se pudo guardar",
+                Precio = 100,
+                Activo = true
+            };
+
+            // CONFIGURACIÓN CLAVE: Aquí simulamos que la base de datos o el servicio falló
+            productoServicioMock
+                .Setup(x => x.InsertarProducto(It.IsAny<ProductoDTO>()))
+                .ReturnsAsync(false); // <--- Forzamos el resultado negativo
+
+            var controller = new ProductoController(productoServicioMock.Object);
+
+            // Act
+            var resultado = await controller.Insertar(productoDTO);
+
+            // Assert
+            // Verificamos que el controlador no deje pasar el fallo en silencio
+            // y responda adecuadamente con un BadRequest (Http 400)
+            Assert.IsType<BadRequestObjectResult>(resultado);
+        }
+    }
+}
