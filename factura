@@ -1,0 +1,77 @@
+using Xunit;
+using Moq;
+using Microsoft.AspNetCore.Mvc;
+using ApparelApi.Controllers;
+using CapaEntidad.DTOs;
+using CapaNegocio.Servicio.Interface;
+using System.Threading.Tasks;
+
+namespace ApparelApi.Test.Factura
+{
+    public class FacturaControllerTest
+    {
+        private readonly Mock<IFacturaServicio> _facturaServicioMock;
+        private readonly FacturaController _controller;
+
+        public FacturaControllerTest()
+        {
+            _facturaServicioMock = new Mock<IFacturaServicio>();
+            _controller = new FacturaController(_facturaServicioMock.Object);
+        }
+
+        [Fact]
+        public async Task CrearFactura_FacturaValida_RetornaOk()
+        {
+            // Arrange
+            var facturaDTO = new FacturaDTO();
+
+            var respuesta = new MessageDTO
+            {
+                IsSuccess = true,
+                Message = new List<string>
+                {
+                    "Factura creada correctamente"
+                }
+            };
+
+            _facturaServicioMock
+                .Setup(x => x.CrearFactura(It.IsAny<FacturaDTO>()))
+                .ReturnsAsync(respuesta);
+
+            // Act
+            var resultado = await _controller.CrearFactura(facturaDTO);
+
+            // Assert
+            var okResult = Assert.IsType<OkObjectResult>(resultado);
+            Assert.Equal(respuesta, okResult.Value);
+        }
+
+        [Fact]
+        public async Task CrearFactura_ErrorAlCrearFactura_RetornaBadRequest()
+        {
+            // Arrange
+            var facturaDTO = new FacturaDTO();
+
+            var respuesta = new MessageDTO
+            {
+                IsSuccess = false,
+                Message = new List<string>
+                {
+                    "Error al crear factura"
+                }
+            };
+
+            _facturaServicioMock
+                .Setup(x => x.CrearFactura(It.IsAny<FacturaDTO>()))
+                .ReturnsAsync(respuesta);
+
+            // Act
+            var resultado = await _controller.CrearFactura(facturaDTO);
+
+            // Assert
+            var badRequestResult = Assert.IsType<BadRequestObjectResult>(resultado);
+            Assert.Equal("Error al crear factura", badRequestResult.Value);
+        }
+    }
+}
+
