@@ -23,7 +23,7 @@ async function handleLoginSubmit(event) {
         if (response.ok) {
             console.log('Login successful:', data);
             localStorage.setItem('token', data.token); 
-            window.location.href = "Panel.html"; 
+            window.location.href = "../../Dashboard/Panel.html"; 
         } else {
             alert('Login failed: ' + (data.message || 'Credenciales incorrectas'));
         }

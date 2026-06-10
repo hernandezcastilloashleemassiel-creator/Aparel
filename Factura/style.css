@@ -292,8 +292,6 @@ h2 {
     justify-content: center;
     align-items: center;
     z-index: 100;
-    
-
 }
 #Modal:checked ~ .contenedor-modal {
     display: flex;
@@ -304,7 +302,8 @@ h2 {
     padding: 20px;
     background: linear-gradient(135deg, #faf7f3, #f0e6d2);  
     border-radius: 4px;
-
+    border-radius:20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
 }
  .btn-cerrar{
     width: 100%;
@@ -325,6 +324,7 @@ h2 {
     color: #7f5539;
     transition: 0.3s;
     outline: none;
+    
 }
 
 /* EFECTO AL HACER CLICK */
@@ -392,9 +392,10 @@ h2 {
 padding:20px;
 border:1px solid #eee;
 border-radius:15px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 margin-bottom:20px;
 margin-top:20px;
- box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
 }
 
 .card input{
