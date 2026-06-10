@@ -5,23 +5,25 @@ document.addEventListener("DOMContentLoaded", function(){
     // AGREGAR PRODUCTO
     document.getElementById("btnagregarproducto").addEventListener("click", function(){
 
-        const nombre = document.getElementById("nombreProducto").value;
+        const codigo = document.getElementById("CodigoProducto").value;
+        const DescripcionProducto = document.getElementById("DescripcionProducto").value;
         const categoria = document.getElementById("CategoriaProducto").value;
         const cantidad = document.getElementById("cantidadProducto").value;
         const preciound = document.getElementById("precioundProducto").value;
 
-        if(nombre === "" || categoria === "" || cantidad === "" || preciound === ""){
+        if(codigo === "" || DescripcionProducto === "" || categoria === "" || cantidad === "" || preciound === ""){
             alert("Completa todos los campos");
             return;
         }
 
         const total = cantidad * preciound;
 
-        productos.push({nombre, categoria ,cantidad, preciound, total});
+        productos.push({codigo, DescripcionProducto, categoria, cantidad, preciound, total});
 
         mostrarProductos();
 
-        document.getElementById("nombreProducto").value = "";
+        document.getElementById("CodigoProducto").value = "";
+        document.getElementById("DescripcionProducto").value = "";
         document.getElementById("CategoriaProducto").value = "";
         document.getElementById("cantidadProducto").value = "";
         document.getElementById("precioundProducto").value = "";
@@ -38,7 +40,8 @@ document.addEventListener("DOMContentLoaded", function(){
             totalGeneral += p.total;
 
             fila.innerHTML = `
-                <td>${p.nombre}</td>
+                <td>${p.CodigoProducto}</td>
+                <td>${p.DescripcionProducto}</td>
                 <td>${p.categoria}</td>
                 <td>${p.cantidad}</td>
                 <td>${p.preciound}</td>
