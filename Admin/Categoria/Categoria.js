@@ -1,4 +1,5 @@
 const baseUrl = "https://localhost:7180/api";
+let categoriaEditandoId = null;
 
 /* informacion de basededatos*/
     async function cargarCategorias() {
@@ -20,7 +21,7 @@ const baseUrl = "https://localhost:7180/api";
                 <td>${categoria.descripcion}</td>
                 <td>${categoria.estado == 1 ? 'Activo' : 'Inactivo'}</td>
                 <td>
-                    <button>Editar</button>
+                    <button onclick="editarCategoria('${categoria.id}')">Editar</button>
                     <button onclick="eliminarCategoria(${categoria.id})">Eliminar </button>
                 </td>
             `;
@@ -55,6 +56,7 @@ async function eliminarCategoria(id) {
 
     }
 }
+
 /*AGREGAR CATEGORIA*/
 async function handleLoginSubmit(event) {
     event.preventDefault();
@@ -68,42 +70,82 @@ async function handleLoginSubmit(event) {
          const endpoint = `${baseUrl}/Categoria`;
 
     try {
-
-        const response = await fetch(endpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(DatosCategoria)
-        });
-
-        const data = await response.json();
-        console.log("Respuesta API:", data);
-        if (response.ok) {
-            console.log('Categoria creada:', data);
-            alert('Categoria creada exitosamente');
-            event.target.reset();
-            // Recarga la tabla desde la BD
-            cargarCategorias();
-
-        } else {
-
-            alert(
-                'Error al crear la categoria: ' +
-                (data.message || 'No se pudo crear la categoria')
+        let response;
+    if (categoriaEditandoId) {
+            response = await fetch(
+                `${baseUrl}/Categoria/${categoriaEditandoId}`,
+                {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(DatosCategoria)
+                }
             );
+    } else {
+            response = await fetch(
+                `${baseUrl}/Categoria`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(DatosCategoria)
+                }
+            );
+        }
 
+        if (response.ok) {
+
+            if (categoriaEditandoId) {
+                alert("Categoria editada exitosamente");
+            } else {
+                alert("Categoria creada exitosamente");
+            }
+
+            event.target.reset();
+            categoriaEditandoId = null;
+            document.getElementById("Modal").checked = false;
+            cargarCategorias();
+        }
+        else {
+            const error = await response.text();
+            alert(error);
         }
 
     } catch (error) {
-
-        console.error('Error de conexión:', error);
-
-        alert('No se pudo conectar con el servidor.');
+        console.error(error);
+        alert("No se pudo conectar con el servidor.");
     }
 }
+/*Editar Categoria*/
+async function editarCategoria(id) {
+    try {
+        const response = await fetch(`${baseUrl}/Categoria/${id}`);
+
+        if (!response.ok) {
+            throw new Error(`Error ${response.status}`);
+        }
+
+        const Categoria = await response.json();
+        console.log(Categoria);
+
+        categoriaEditandoId = id; 
+
+        document.getElementById("NombreCategoria").value = Categoria.nombreCategoria;
+        document.getElementById("DescripcionCategoria").value = Categoria.descripcion;
+
+        document.getElementById("Modal").checked = true;
+
+    } catch (error) {
+        console.error(error);
+        alert("Error al obtener categoria");
+    }
+}
+
 document
     .getElementById('formCategoria')
     .addEventListener('submit', handleLoginSubmit);
 document.addEventListener("DOMContentLoaded", cargarCategorias);
 window.eliminarCategoria = eliminarCategoria;
+window.editarCategoria = editarCategoria;
