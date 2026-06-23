@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
 <link rel="stylesheet" href="StyleUsuarios.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<script src="/Auth/Usuario/Usuario.js" defer></script>
 </head>
 <body>
     <!-- BARRA -->
@@ -19,17 +20,17 @@
        <div class="menu-gestion">
         <a href="#"><i class="fi fi-rs-briefcase"></i> Gestion de catalogo</a>
         <div class="submenu">
-            <a href="../Admin/Categoria/Categorias.html"><i class="fi fi-rs-box"></i> Categorias</a>
-            <a href="../Admin/Producto/Productos.html"><i class="fi fi-rs-shopping-bag"></i> Productos</a>
-            <a href="../Admin/Cliente/Clientes.html"><i class="fi fi-rs-users"></i> Clientes</a>
-            <a href="../Admin/Proveedor/Proveedores.html"><i class="fi fi-rs-users"></i> Proveedores</a>
+            <a href="/Admin/Categoria/Categorias.html"><i class="fi fi-rs-box"></i> Categorias</a>
+            <a href="/Admin/Producto/Productos.html"><i class="fi fi-rs-shopping-bag"></i> Productos</a>
+            <a href="/Admin/Cliente/Clientes.html"><i class="fi fi-rs-users"></i> Clientes</a>
+            <a href="/Admin/Proveedor/Proveedores.html"><i class="fi fi-rs-users"></i> Proveedores</a>
         </div>
        </div>
             <a href="/Factura/factura.html"><i class="fi fi-rs-receipt"></i> Facturacion</a>
             <a href="/Inventario/Inventario.html"><i class="fi fi-rs-inventory-alt"></i> Inventario</a>
             <a href="/Auth/Usuario/Usuarios.html"><i class="fi fi-rs-users"></i> Usuarios</a>
             <a href="/Reporte/Reportes.html"><i class="fi fi-rs-chart-histogram"></i> Reportes</a>
-            <a href="../Auth/Login/Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
+            <a href="/Auth/Login/Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
     </div>
     
 </div>
@@ -42,60 +43,44 @@
         <input type="text" placeholder="Buscar usuario...">
         <button><i class="fi fi-rs-search"></i></button>
     </div>
-     <div class="acciones">
-        <button class="btn-agregar"><i class="fi fi-rs-plus"></i> Agregar Usuario</button>
-    </div>  
     </div>
     <!-- Contenido principal Usuarios -->
  <table class="tabla-usuarios">
     <thead>
         <tr>
             <th>Nombre</th>
-            <th>Cargo</th>
             <th>Correo</th>
+            <th>Cargo</th>
             <th>Acciones</th>
         </tr>
     </thead>
-    <tbody>
-        <!-- Aquí se agregarán los Usuarios  -->
-        <tr>
-            <td>Ashlee Hernandez</td>
-            <td>Administrador</td>
-            <td>ashlee.hernandez@gmail.com</td>
-            <td>
-                <button><i class="fi fi-rs-edit"></i></button>
-                <button><i class="fi fi-rs-trash"></i></button>
-            </td>
-        </tr>
-            <tr>
-                <td>Norling Gutierrez</td>
-                <td>Administrador</td>
-                <td>norling.gutierrez@gmail.com</td>
-                <td>
-                    
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-            </tr>   
-            <tr>
-                <td>Anahis Molina</td>
-                <td>Vendedor</td>
-                <td>anahis.molina@gmail.com</td>
-                <td>
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>Fernanda Narvaez</td>
-                <td>Vendedora</td>
-                <td>fernanda.narvaez@gmail.com</td>
-                <td>
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-                </td>
-            </tr>
-    </tbody>
-</table>
+     <tbody id="tabla-usuarios">
+     </tbody>
+        <!--BtnModal-->
+        <div class="btn-modal">
+            <label for="Modal">
+                <i class="fi fi-rs-plus"></i> Agregar Usuario
+            </label>
+     </table>
+            <!--PantallaModal-->
+            <input type="checkbox" id="Modal">
+            <div class="contenedor-modal">
+                <div class="contenido-modal">
+                    <div class="btn-cerrar">
+                    <label for="Modal">X</label>
+                </div>
+                    <h3>Agregar Usuario</h3>
+                    <form id="formUsuario">
+                    <input type="hidden" id="IdUsuario" name="IdUsuario">
+                    <input type="text" id="NombreUsuario" name="NombreUsuario" placeholder="Nombre del usuario">
+                    <input type="text" id="CorreoUsuario" name="CorreoUsuario" placeholder="Correo del usuario">
+                    <input type="text" id="CargoUsuario" name="CargoUsuario" placeholder="Cargo del usuario">
+                    <input type="password" id="ContraseñaUsuario" name="ContraseñaUsuario" placeholder="Contraseña del usuario">
+                    <button type="submit" id="btnagregarusuario" class="btn"> Agregar Usuario</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 </div>
 <div class="Resumen">
     <h2>Resumen de Usuarios</h2>

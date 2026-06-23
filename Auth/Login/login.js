@@ -1,5 +1,11 @@
 const baseUrl = "https://localhost:7180/api";
 
+    function handlechangetitle(event) {
+        if (event.key === 'Enter') {
+            document.querySelector('.subtitle').textContent = 'Bienvenido, admin';
+        }
+    }
+
 async function handleLoginSubmit(event) {
     event.preventDefault();
 
