@@ -8,8 +8,10 @@
 <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
 <link rel="stylesheet" href="styleCliente.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    <script src ="Clientes.js" defer></script>
     <!-- BARRA -->
     <div class="barra">
         <div class="logo"> 👜 Apparel</div>
@@ -43,72 +45,49 @@
         <button><i class="fi fi-rs-search"></i></button>
     </div>
      <div class="acciones">
-        <button class="btn-agregar"><i class="fi fi-rs-plus"></i> Agregar Cliente</button>
     </div>  
     </div>
     <!-- Contenido principal Clientes -->
- <table class="tabla-clientes">
+ <table class="tabla-Clientes">
     <thead>
         <tr>
             <th>Nombre</th>
+            <TH>Apellido</TH>
             <th>Correo Electrónico</th>
             <th>Teléfono</th>
-            <th>Dirección</th>
+            <th>Estado</th>
             <th>Acciones</th>
         </tr>
     </thead>
-    <tbody>
-        <!-- Aquí se agregarán los clientes  -->
-        <tr>
-            <td>Juan Pérez</td>
-            <td>juan.perez@email.com</td>
-            <td>123-456-7890</td>
-            <td>Calle Principal 123</td>
-            <td>
-                <button><i class="fi fi-rs-edit"></i></button>
-                <button><i class="fi fi-rs-trash"></i></button>
-            </td>
-        </tr>
-            <tr>
-                <td>María Gómez</td>
-                <td>maria.gomez@email.com</td>
-                <td>098-765-4321</td>
-                <td>Avenida Secundaria 456</td>
-                <td>
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-            </tr>   
-            <tr>
-                <td>Carlos Rodríguez</td>
-                <td>carlos.rodriguez@email.com</td>
-                <td>555-1234</td>
-                <td>Calle Terciaria 789</td>
-                <td>
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>Ana Martínez</td>
-                <td>ana.martinez@email.com</td>
-                <td>555-5678</td>
-                <td>Avenida Principal 101</td>
-                <td>
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-                </td>
-            </tr>
-             <tr>
-                <td>Pedro Sánchez</td>
-                <td>pedro.sanchez@email.com</td>
-                <td>555-9012</td>
-                <td>Calle Cuarta 101</td>
-                <td>
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-                </td>
-            </tr>
-    </tbody>
+        <!--BtnModal-->
+        <div class="btn-modal">
+            <label for="Modal">
+                Agregar Clientes
+            </label>
+            <!--PantallaModal-->
+            <input type="checkbox" id="Modal">
+            <div class="contenedor-modal">
+                <div class="contenido-modal">
+                    <div class="btn-cerrar">
+                    <label for="Modal">X</label>
+                </div>
+                    <h3>Agregar Clientes</h3>
+                    <form id="formCliente">
+                    <input type="hidden" id="IdClientes" name="IdClientes">
+                    <input type="text" id="NombreCliente" name="NombreCliente" placeholder="Nombre">
+                    <input type="text" id="ApellidoCliente" name="ApellidoCliente" placeholder="Apellido">  
+                    <input type="text" id="CorreoCliente" name="CorreoCliente" placeholder="Correo ">
+                    <input type="text" id="TelefonoCliente" name="TelefonoCliente" placeholder="Telefono ">
+                    <select id="EstadoCliente" name="EstadoCliente">
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                    <button type="submit" id="btnagregarclientes" class="btn"> Agregar Cliente</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+            <tbody id="tabla-Clientes"></tbody>
 </table>
 </div>
 </body>

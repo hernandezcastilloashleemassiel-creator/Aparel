@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function(){
             totalGeneral += p.total;
 
             fila.innerHTML = `
-                <td>${p.CodigoProducto}</td>
+                <td>${p.NombreProducto}</td>
                 <td>${p.DescripcionProducto}</td>
                 <td>${p.categoria}</td>
                 <td>${p.cantidad}</td>

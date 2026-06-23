@@ -29,7 +29,7 @@
             <a href="/Inventario/Inventario.html"><i class="fi fi-rs-inventory-alt"></i> Inventario</a>
             <a href="/Auth/Usuario/Usuarios.html"><i class="fi fi-rs-users"></i> Usuarios</a>
             <a href="/Reporte/Reportes.html"><i class="fi fi-rs-chart-histogram"></i> Reportes</a>
-            <a href="../Auth/Login/Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
+            <a href="/Auth/Login/Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
     </div>
     
 </div>
@@ -42,9 +42,6 @@
         <input type="text" placeholder="Buscar producto...">
         <button><i class="fi fi-rs-search"></i></button>
     </div>
-     <div class="acciones">
-        <button class="btn-agregar"><i class="fi fi-rs-plus"></i> Agregar Producto</button>
-    </div>  
     </div>
     <!-- Contenido principal Productos -->
  <table class="tabla-productos">
@@ -53,69 +50,46 @@
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Precio</th>
-            <th>Stock</th>
             <th>Categoría</th>
+            <th>Stock</th>
+            <th>Estado</th>
             <th>Acciones</th>
         </tr>
     </thead>
-    <tbody>
-        <!-- Aquí se agregarán los proveedores  -->
-        <tr>
-            <td>Blusa de verano</td>
-            <td>Blusa ligera y fresca para el verano</td>
-            <td>C$250</td>
-            <td>5</td>
-            <td>Blusa</td>
-            <td>
-                <button><i class="fi fi-rs-edit"></i></button>
-                <button><i class="fi fi-rs-trash"></i></button>
-            </td>
-        </tr>
-            <tr>
-                <td>pantalon</td>
-                <td>Pantalón ligero y cómodo</td>
-                <td>C$300</td>
-                <td>3</td>
-                <td>Pantalón</td>
-                <td>
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-            </tr>   
-            <tr>
-                <td>Blusa de primavera</td>
-                <td>Blusa con estampado floral</td>
-                <td>C$100</td>
-                <td>4</td>
-                <td>Blusa</td>
-                <td>
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>Vestido</td>
-                <td>Vestido elegante </td>
-                <td>C$500</td>
-                <td>5</td>
-                <td>Vestido</td>
-                <td>
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-                </td>
-            </tr>
-             <tr>
-                <td>gorra </td>
-                <td>Gorra de algodón</td>
-                <td>C$350</td>
-                <td>7</td>
-                <td>Gorra</td>
-                <td>
-                    <button><i class="fi fi-rs-edit"></i></button>
-                    <button><i class="fi fi-rs-trash"></i></button>
-                </td>
-            </tr>
-    </tbody>
+    <!--BtnModal-->
+        <div class="btn-modal">
+            <label for="Modal">
+                Agregar Producto
+            </label>
+            <!--PantallaModal-->
+            <input type="checkbox" id="Modal">
+            <div class="contenedor-modal">
+                <div class="contenido-modal">
+                    <div class="btn-cerrar">
+                    <label for="Modal">X</label>
+                </div>
+                    <h3>Agregar Producto</h3>
+                    <form id="formProducto">
+                    <input type="hidden" id="IdProducto" name="IdProducto">
+                    <input type="text" id="NombreProducto" name="NombreProducto" placeholder="Nombre del producto">
+                    <input type="text" id="DescripcionProducto" name="DescripcionProducto" placeholder="Descripcion Producto">
+                    <input type="number" id="PrecioProducto" name="PrecioProducto" placeholder="Precio">
+                    <input type="number" id="Stock" name="Stock" placeholder="Stock">
+                    <select type="text" id="Categoria" name="Categoria" placeholder="Categoría">
+                         <option value="">-- Seleccione una categoría --</option>
+                    </select>
+                    <select id="EstadoCategoria" name="EstadoCategoria">
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                    <button type="submit" id="btnagregarproducto" class="btn"> Agregar producto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+            <tbody id="tabla-Producto"></tbody>
+
 </table>
 </div>
-</body>
+<script src="/Admin/Producto/Productos.js" defer></script></body>
 </html>
