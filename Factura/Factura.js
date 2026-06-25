@@ -200,6 +200,12 @@ mostrarFactura();
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(facturaData)
         });
+        const resultado = await response.json();
+    console.log("Respuesta backend factura:", resultado);
+    if (!response.ok) {
+    alert("Error al generar factura: " + (resultado.message || JSON.stringify(resultado)));
+    return;
+    }
 
         if (response.ok) {
             alert("Factura generada con éxito");
