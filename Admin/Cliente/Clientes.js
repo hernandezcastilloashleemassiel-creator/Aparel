@@ -1,19 +1,14 @@
-const baseUrl = "https://localhost:7180/api";
-let ClienteEditandoId = null;
-/* informacion de basededatos*/
-    async function cargarCliente() {
-    try {
-        const response = await fetch(`${baseUrl}/Cliente`);
-        if (!response.ok) {
-            throw new Error("Error al obtener los clientes");
-        }
-        const clientes = await response.json();
-        const tabla = document.getElementById("tabla-Clientes");
+import { Cliente } from "/Modelos/MClientes.js";
+import { ClienteService } from "/Service/SCliente.js";
 
-        // Limpia la tabla antes de volver a llenarla
+let ClienteEditandoId = null;
+/* Cargar clientes */
+async function cargarCliente() {
+    try {
+        const clientes = await ClienteService.obtenerTodos();
+        const tabla = document.getElementById("tabla-Clientes");
         tabla.innerHTML = "";
-        
-         clientes.forEach(cliente => {
+        clientes.forEach(cliente => {
             const fila = document.createElement("tr");
             fila.innerHTML = `
                 <td>${cliente.nombre}</td>
@@ -21,135 +16,83 @@ let ClienteEditandoId = null;
                 <td>${cliente.email ?? ''}</td>
                 <td>${cliente.telefono ?? ''}</td>
                 <td>${cliente.activo ? 'Activo' : 'Inactivo'}</td>
-            <td>
-                <button class="btn-editar" onclick="editarCliente(${cliente.id})"><i class="fi fi-rs-edit"></i></button>
-                <button class="btn-eliminar" onclick="eliminarCliente(${cliente.id})"><i class="fi fi-rs-trash"></i></button>
-            </td>
+                <td>
+                    <button class="btn-editar" onclick="editarCliente(${cliente.id})">
+                        <i class="fi fi-rs-edit"></i>
+                    </button>
+
+                    <button class="btn-eliminar" onclick="eliminarCliente(${cliente.id})">
+                        <i class="fi fi-rs-trash"></i>
+                    </button>
+                </td>
             `;
 
             tabla.appendChild(fila);
+
         });
 
-    } catch (error) {
-        console.error("Error al cargar los clientes:", error);
     }
-}
- /*ELIMINAR CLIENTES*/
-async function eliminarCliente(id) {
-    if (!confirm("¿Deseas eliminar este Cliente?")) {
-        return;
-    }
-    try {
-        const response = await fetch(`${baseUrl}/Cliente/${id}`, {
-            method: "DELETE"
-        });
-    if (response.ok) {alert("Cliente eliminado correctamente");
-            // Recarga la tabla
-            cargarCliente();
-        } else {
-            alert("No se pudo eliminar el cliente");
-        }
-
-    } catch (error) {
-
+    catch (error) {
         console.error(error);
-        alert("Error de conexión");
-
     }
 }
 
-/*AGREGAR CLIENTE*/
+/* Eliminar */
+async function eliminarCliente(id) {
+    if (!confirm("¿Deseas eliminar este Cliente?"))
+        return;
+    const response = await ClienteService.eliminar(id);
+    if (response.ok) {
+        alert("Cliente eliminado correctamente");
+        cargarCliente();
+    }
+    else {
+        alert("No se pudo eliminar el cliente");
+    }
+}
+/* Guardar */
 async function handleLoginSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const DatosCliente = {
-        nombre: formData.get('NombreCliente'),
-        apellido: formData.get('ApellidoCliente'),
-        email: formData.get('CorreoCliente'),
-        telefono: formData.get('TelefonoCliente'),
-        activo: formData.get('EstadoCliente') === 'true' 
-    };
-         console.log('Cliente:', DatosCliente);
-         const endpoint = `${baseUrl}/Cliente`;
-
-    try {
-        let response;
-    if (ClienteEditandoId) {
-            response = await fetch(
-                `${baseUrl}/Cliente/${ClienteEditandoId}`,
-                {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(DatosCliente)
-                }
-            );
-    } else {
-            response = await fetch(
-                `${baseUrl}/Cliente`,
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(DatosCliente)
-                }
-            );
-        }
-
-        if (response.ok) {
-
-            if (ClienteEditandoId) {
-                alert("Cliente editado exitosamente");
-            } else {
-                alert("Cliente creado exitosamente");
-            }
-
-            event.target.reset();
-            ClienteEditandoId = null;
-            document.getElementById("Modal").checked = false;
-            cargarCliente();
-        }
-        else {
-            const error = await response.text();
-            alert(error);
-        }
-
-    } catch (error) {
-        console.error(error);
-        alert("No se pudo conectar con el servidor.");
+    const DatosCliente = new Cliente(
+        formData.get("NombreCliente"),
+        formData.get("ApellidoCliente"),
+        formData.get("CorreoCliente"),
+        formData.get("TelefonoCliente"),
+        formData.get("EstadoCliente") === "true"
+    );
+    const response = await ClienteService.guardar(DatosCliente, ClienteEditandoId);
+    if (response.ok) {
+        alert(ClienteEditandoId ? "Cliente editado exitosamente" : "Cliente creado exitosamente");
+        event.target.reset();
+        ClienteEditandoId = null;
+        document.getElementById("Modal").checked = false;
+        cargarCliente();
+    }
+    else {
+        alert(await response.text());
     }
 }
-/*Editar Cliente*/
+/* Editar */
 async function editarCliente(id) {
     try {
-        const response = await fetch(`${baseUrl}/Cliente/${id}`);
-
-        if (!response.ok) {
-            throw new Error(`Error ${response.status}`);
-        }
-
-        const Cliente = await response.json();
-        console.log(Cliente);
-
-        ClienteEditandoId = id; 
-
-        document.getElementById("NombreCliente").value = Cliente.nombre;
-        document.getElementById("ApellidoCliente").value = Cliente.apellido;
-        document.getElementById("TelefonoCliente").value = Cliente.telefono;
-        document.getElementById("CorreoCliente").value = Cliente.email;
+        const cliente = await ClienteService.obtenerPorId(id);
+        ClienteEditandoId = id;
+        document.getElementById("NombreCliente").value = cliente.nombre;
+        document.getElementById("ApellidoCliente").value = cliente.apellido;
+        document.getElementById("TelefonoCliente").value = cliente.telefono;
+        document.getElementById("CorreoCliente").value = cliente.email;
+        document.getElementById("EstadoCliente").value = cliente.activo ? "true" : "false";
         document.getElementById("Modal").checked = true;
-
-    } catch (error) {
+    }
+    catch (error) {
         console.error(error);
-        alert("Error al obtener categoria");
+        alert("Error al obtener el cliente");
     }
 }
-
 document
-    .getElementById('formCliente')
-    .addEventListener('submit', handleLoginSubmit);
+    .getElementById("formCliente")
+    .addEventListener("submit", handleLoginSubmit);
 document.addEventListener("DOMContentLoaded", cargarCliente);
-window.eliminarCliente = eliminarCliente;
 window.editarCliente = editarCliente;
+window.eliminarCliente = eliminarCliente;
