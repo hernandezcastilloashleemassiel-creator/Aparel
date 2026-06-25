@@ -295,3 +295,41 @@
     box-shadow: 0 6px 15px rgba(175,135,109,0.25);
     margin-top: 20px;
 }
+
+.btn-eliminar,
+.btn-editar {
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+}
+.btn-editar {
+    background: #d4edda;
+    color: #155724;
+}
+
+.btn-eliminar {
+    background: #ffebee;
+    color: #d32f2f;
+}
+.btn-editar:hover {
+    background: #28a745;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-eliminar:hover {
+    background: #d32f2f;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-editar:active,
+.btn-eliminar:active {
+    transform: scale(0.95);
+}

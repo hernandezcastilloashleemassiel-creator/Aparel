@@ -11,8 +11,7 @@
 </head>
 
 <body>
-    <script src="botones.js"></script>
-
+    
 <!-- BARRA -->
 <div class="barra">
     <div class="logo"> 👜 Apparel</div>
@@ -32,7 +31,7 @@
             <a href="/Inventario/Inventario.html"><i class="fi fi-rs-inventory-alt"></i> Inventario</a>
             <a href="/Auth/Usuario/Usuarios.html"><i class="fi fi-rs-users"></i> Usuarios</a>
             <a href="/Reporte/Reportes.html"><i class="fi fi-rs-chart-histogram"></i> Reportes</a>
-            <a href="../Auth/Login/Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
+            <a href="/Auth/Login/Inicio.html"><i class="fi fi-rs-exit"></i> Cerrar Sesion</a>
     </div>
 </div>
 
@@ -68,10 +67,12 @@
                     <label for="Modal">X</label>
                 </div>
                     <h3>Agregar Producto</h3>
-                    <input type="text" id="NombreProducto" placeholder="Nombre del producto">
-                    <input type="text" id="DescripcionProducto" placeholder="Descripción del producto">
-                    <input type="text" id="CategoriaProducto" placeholder="Categoria Producto">
-                    <input type="number" id="precioundProducto" placeholder="Preciound">
+                     <select type="text" id="Producto" name="Producto" placeholder="Producto">
+                         <option value="">-- Seleccione un producto--</option>
+                    </select>
+                    <input type="text" id="DescripcionProducto" placeholder="Descripción del producto" readonly>
+                    <input type="text" id="CategoriaProducto" placeholder="Categoria Producto" readonly>
+                    <input type="number" id="precioundProducto" placeholder="Preciound" readonly>
                     <input type="number" id="cantidadProducto" placeholder="Cantidad">
                     
               <button id="btnagregarproducto" class="btn">Agregar Producto</button>
@@ -120,20 +121,34 @@
         Total: C$<span id="totalGeneral">0</span>
     </div>
     <!--BtnmodalFactura-->
-        <div class="btn-Factura">
-            <label for="Factura">
-                Generar Factura
-            </label>
-            <!--PantallaModal-->
-            <input type="checkbox" id="Factura">
-            <div class="contenedor-Factura">
-                <div class="contenido-Factura">
-                    <h3>Factura</h3>
-                    <div id="detalleFactura"></div>
-                    <p>Gracias por su compra</p>
-                    <div class="btn-cerrar-factura">
-                    <label for="Factura">X</label>
+  <div class="btn-Factura">
+
+    <!-- Botón para abrir el modal -->
+    <label for="Factura" onclick="mostrarFactura()">
+        Generar Factura
+    </label>
+
+    <!-- Checkbox que controla el modal -->
+    <input type="checkbox" id="Factura">
+
+    <div class="contenedor-Factura">
+        <div class="contenido-Factura">
+        <div class="btn-cerrar-factura">
+                <label for="Factura">X</label>
+            </div>
+            <h3>Factura</h3>
+
+            <!-- Aquí se mostrará el detalle -->
+            <div id="detalleFactura"></div>
+
+            <!-- Botón para guardar la factura -->
+            <button type="button" onclick="generarFactura()">
+                Confirmar Factura
+            </button>
         </div>
-</div>
+    </div>
 
 </div>
+<script src="Factura.js"></script>
+</body>
+</html>

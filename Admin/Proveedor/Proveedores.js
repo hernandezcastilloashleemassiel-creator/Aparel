@@ -23,8 +23,8 @@ let ProveedoresEditandoId = null;
                 <td>${Proveedores.direccion ?? ''} </td>
                 <td>${Proveedores.activo ? 'Activo' : 'Inactivo'}</td>
             <td>
-                <button onclick="editarProveedor(${Proveedores.id})"><i class="fi fi-rs-edit"></i></button>
-                <button onclick="eliminarProveedores(${Proveedores.id})"><i class="fi fi-rs-trash"></i></button>
+                <button class="btn-editar" onclick="editarProveedor(${Proveedores.id})"><i class="fi fi-rs-edit"></i></button>
+                <button class="btn-eliminar" onclick="eliminarProveedores(${Proveedores.id})"><i class="fi fi-rs-trash"></i></button>
             </td>
             `;
 
@@ -69,7 +69,7 @@ async function handleLoginSubmit(event) {
         telefono: formData.get('Telefono'),
         Correo: formData.get('Correo'),
         Direccion: formData.get ('Direccion'),
-        activo: formData.get('Estado') === 'true' 
+      activo: formData.get('Estado') === 'true'
     };
          console.log('Proveedor:', DatosProveedor);
          const endpoint = `${baseUrl}/Proveedor`;
