@@ -21,8 +21,8 @@ let usuarioEditandoId = null;
                 <td>${usuario.correoUsuario}</td>
                 <td>${usuario.cargoUsuario ?? ''}</td>
                 <td>
-                <button onclick="editarUsuario('${usuario.id}')"><i class="fi fi-rs-pencil"></i></button>
-                <button onclick="eliminarUsuario('${usuario.id}')"><i class="fi fi-rs-trash"></i></button>
+                <button class="btn-editar" onclick="editarUsuario('${usuario.id}')"><i class="fi fi-rs-pencil"></i></button>
+                <button class="btn-eliminar" onclick="eliminarUsuario('${usuario.id}')"><i class="fi fi-rs-trash"></i></button>
                 </td>
             `;
 

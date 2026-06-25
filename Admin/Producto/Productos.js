@@ -27,8 +27,8 @@ async function cargarProducto() {
                 <td>${producto.stock}</td>
                 <td>${producto.activo ? 'Activo' : 'Inactivo'}</td>
                 <td>
-                    <button onclick="editarProducto(${producto.id})"><i class="fi fi-rs-pencil"></i></button>
-                    <button onclick="eliminarProductos(${producto.id})"><i class="fi fi-rs-trash"></i></button>
+                    <button class="btn-editar" onclick="editarProducto(${producto.id})"><i class="fi fi-rs-pencil"></i></button>
+                    <button class="btn-eliminar" onclick="eliminarProductos(${producto.id})"><i class="fi fi-rs-trash"></i></button>
                 </td>
             `;
 

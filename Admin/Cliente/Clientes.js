@@ -22,8 +22,8 @@ let ClienteEditandoId = null;
                 <td>${cliente.telefono ?? ''}</td>
                 <td>${cliente.activo ? 'Activo' : 'Inactivo'}</td>
             <td>
-                <button onclick="editarCliente(${cliente.id})"><i class="fi fi-rs-edit"></i></button>
-                <button onclick="eliminarCliente(${cliente.id})"><i class="fi fi-rs-trash"></i></button>
+                <button class="btn-editar" onclick="editarCliente(${cliente.id})"><i class="fi fi-rs-edit"></i></button>
+                <button class="btn-eliminar" onclick="eliminarCliente(${cliente.id})"><i class="fi fi-rs-trash"></i></button>
             </td>
             `;
 

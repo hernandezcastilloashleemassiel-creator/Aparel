@@ -27,11 +27,11 @@ async function cargarTablaCategorias() {
                 <td>${categoria.descripcion}</td>
                 <td>${categoria.estado == 1 ? 'Activo' : 'Inactivo'}</td>
                 <td>
-                    <button onclick="editarCategoria(${categoria.id})">
+                    <button class="btn-editar" onclick="editarCategoria(${categoria.id})">
                         <i class="fi fi-rs-pencil"></i>
                     </button>
 
-                    <button onclick="eliminarCategoria(${categoria.id})">
+                    <button class="btn-eliminar" onclick="eliminarCategoria(${categoria.id})">
                         <i class="fi fi-rs-trash"></i>
                     </button>
                 </td>

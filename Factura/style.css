@@ -423,3 +423,127 @@ justify-content:center;
 align-items:center;
 font-size:25px;
 }
+
+.btn-eliminar {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 8px;
+    background: #ffebee;
+    color: #d32f2f;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-eliminar:hover {
+    background: #d32f2f;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-eliminar:active {
+    transform: scale(0.95);
+}
+
+/* Modal */
+.contenido-Factura {
+    width: 600px;
+    max-width: 90%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Título */
+.contenido-Factura h3 {
+    color: #8B5E3C;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Tabla */
+#detalleFactura table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#detalleFactura thead {
+    background: #f5ede6;
+}
+
+#detalleFactura th,
+#detalleFactura td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#detalleFactura th {
+    color: #8B5E3C;
+    font-weight: 600;
+}
+
+#detalleFactura tr:hover {
+    background: #faf7f5;
+}
+
+/* Total */
+#detalleFactura h3 {
+    text-align: right;
+    color: #8B5E3C;
+    font-size: 28px;
+    margin-top: 15px;
+}
+
+/* Botón confirmar */
+.btn-confirmar-factura {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #B88960;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-confirmar-factura:hover {
+    background: #9d734e;
+}
+
+/* Botón cerrar */
+.btn-cerrar-factura {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.btn-cerrar-factura label {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background: #B88960;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s;
+}
+
+.btn-cerrar-factura label:hover {
+    background: #9d734e;
+}
