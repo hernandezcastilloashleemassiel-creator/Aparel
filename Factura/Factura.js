@@ -183,41 +183,93 @@ function mostrarFactura() {
     detalleFactura.innerHTML = html;
 }
 
+function imprimirFacturaPDF() {
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    let y = 20;
+    let total = 0;
+
+    doc.setFontSize(18);
+    doc.text("APPAREL", 80, y);
+
+    y += 10;
+    doc.setFontSize(14);
+    doc.text("FACTURA", 85, y);
+
+    y += 15;
+    doc.setFontSize(11);
+    doc.text(`Fecha: ${new Date().toLocaleString()}`, 15, y);
+
+    y += 15;
+
+    doc.text("Producto", 15, y);
+    doc.text("Cant.", 90, y);
+    doc.text("Precio", 120, y);
+    doc.text("Subtotal", 160, y);
+
+    y += 8;
+
+    listaProductosFactura.forEach(item => {
+
+        const subtotal = item.cantidad * item.precioUnitario;
+        total += subtotal;
+
+        doc.text(item.descripcion, 15, y);
+        doc.text(item.cantidad.toString(), 90, y);
+        doc.text(`C$ ${item.precioUnitario.toFixed(2)}`, 120, y);
+        doc.text(`C$ ${subtotal.toFixed(2)}`, 160, y);
+
+        y += 8;
+    });
+
+    y += 10;
+
+    doc.setFontSize(14);
+    doc.text(`TOTAL: C$ ${total.toFixed(2)}`, 130, y);
+
+    doc.save("Factura.pdf");
+}
+
 window.generarFactura = async () => {
     if (listaProductosFactura.length === 0) return alert("Agregue productos primero");
 
 mostrarFactura();
 
     const facturaData = {
-        clienteId: clienteId,
+        clienteId: null,
         fecha: new Date().toISOString(),
         detalleFacturaDTOs: listaProductosFactura
     };
 
-    try {
-        const response = await fetch(`${baseUrl}/Factura`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(facturaData)
-        });
-        const resultado = await response.json();
+   try {
+    const response = await fetch(`${baseUrl}/Factura`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(facturaData)
+    });
+
+    const resultado = await response.json();
+
     console.log("Respuesta backend factura:", resultado);
+
     if (!response.ok) {
-    alert("Error al generar factura: " + (resultado.message || JSON.stringify(resultado)));
-    return;
+        alert(resultado.message.join("\n"));
+        return;
     }
 
-        if (response.ok) {
-            alert("Factura generada con éxito");
-            listaProductosFactura = [];
-            renderizarTabla();
-        } else {
-            const err = await response.text();
-            alert("Error: " + err);
-        }
-    } catch (error) {
-        console.error("Error:", error);
-    }
+    alert("Factura generada con éxito");
+imprimirFacturaPDF();
+    listaProductosFactura = [];
+    renderizarTabla();
+    detalleFactura.innerHTML = "";
+
+} catch (error) {
+    console.error("Error:", error);
+}
 };
 
 document.addEventListener("DOMContentLoaded", cargarProducto);

@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
 <link rel="stylesheet" href="style.css">
 
+
 </head>
 
 <body>
@@ -142,13 +143,14 @@
             <div id="detalleFactura"></div>
 
             <!-- Botón para guardar la factura -->
-            <button type="button" onclick="generarFactura()">
-                Confirmar Factura
-            </button>
+            <button type="button" class="btn" onclick="generarFactura()">
+            Confirmar Factura
+        </button>
         </div>
     </div>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="Factura.js"></script>
 <script src="/Auth/verificarSesion.js"></script>
 </body>
